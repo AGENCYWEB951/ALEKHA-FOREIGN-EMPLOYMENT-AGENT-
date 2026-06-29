@@ -514,7 +514,48 @@
 <div class="ethical-grid" id="ethical-grid">
     <!-- Existing Content -->
 </div>
+<!-- Floating Social Contact Bar -->
+<div class="social-float">
+    <a href="https://wa.me/251922959544" target="_blank" class="social-icon whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://t.me/+251922959544" target="_blank" class="social-icon telegram">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+</div>
 
+<style>
+.social-float {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp { background-color: #25d366; }
+.telegram { background-color: #0088cc; }
+
+.social-icon:hover {
+    transform: scale(1.15);
+    box-shadow: var(--matrix-glow);
+}
+</style>
 <div class="cta-container">
     <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'">Request Manpower</button>
 </div>
