@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="portal-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Nyala', 'Cairo', Tahoma, sans-serif;
         }
 
         body {
@@ -30,6 +30,7 @@
             color: var(--silver-quartz);
             overflow-x: hidden;
             line-height: 1.6;
+            transition: var(--transition-smooth);
         }
 
         /* --- TELEMETRY GLOW HEADER --- */
@@ -50,6 +51,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         .logo-block {
@@ -77,6 +80,39 @@
             color: var(--neon-cyan);
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* --- NEON LANGUAGE TOGGLER --- */
+        .lang-control-panel {
+            display: flex;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 4px;
+            border-radius: 30px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.05);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--silver-muted);
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--bg-obsidian);
+            box-shadow: var(--matrix-glow);
+            text-shadow: none;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--neon-cyan);
         }
 
         /* --- HERO & FLAGS DISPLAY --- */
@@ -113,8 +149,6 @@
             padding: 1.5rem;
             transition: var(--transition-smooth);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
             transform: scale(0.98);
             opacity: 0.9;
         }
@@ -158,7 +192,7 @@
 
         .pipeline-container {
             max-width: 1200px;
-            margin: 0 auto padding 2rem;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
@@ -173,10 +207,18 @@
             transition: var(--transition-smooth);
         }
 
+        /* Support Right-to-Left pipelines for Arabic layout */
+        html[dir="rtl"] .pipeline-card {
+            border-left: none;
+            border-right: 4px solid var(--neon-purple);
+            border-radius: 12px 0 0 12px;
+        }
+
         .pipeline-card:hover {
             border-left-color: var(--neon-cyan);
+            border-right-color: var(--neon-cyan);
             background: var(--bg-card);
-            transform: translateX(5px);
+            transform: translateY(-5px);
         }
 
         .pipeline-num {
@@ -207,7 +249,7 @@
         th {
             background: rgba(0, 242, 254, 0.1);
             color: var(--neon-cyan);
-            text-align: left;
+            text-align: inherit;
             padding: 1.2rem;
             font-weight: 600;
             border-bottom: 2px solid rgba(0, 242, 254, 0.2);
@@ -217,6 +259,7 @@
             padding: 1.2rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--silver-quartz);
+            text-align: inherit;
         }
 
         tr:hover {
@@ -245,8 +288,9 @@
             border-radius: 50px;
             cursor: pointer;
             transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-neon:hover {
@@ -262,112 +306,119 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* --- MOBILE LAYOUT FIXES --- */
         @media (max-width: 768px) {
-            .header-container { flex-direction: column; text-align: center; gap: 1rem; }
+            .header-container { flex-direction: column; text-align: center; }
             .hero h2 { font-size: 1.8rem; }
             .cta-container { flex-direction: column; gap: 1rem; }
-            .btn-neon { width: 100%; }
+            .btn-neon { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 📡 TELEMETRY COMMAND HEADER -->
+    <!-- 📡 TELEMETRY INTERACTIVE HEADER -->
     <header>
         <div class="header-container">
             <div class="logo-block">
                 <i class="fa-solid fa-microchip logo-icon"></i>
                 <div class="logo-text">
-                    <h1>ALEKHA FOREIGN EMPLOYMENT AGENT</h1>
-                    <p>Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]</p>
+                    <h1 id="nav-title">ALEKHA FOREIGN EMPLOYMENT AGENT</h1>
+                    <p id="nav-subtitle">Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]</p>
                 </div>
             </div>
-            <div class="logo-text" style="text-align: right;">
-                <p style="color: var(--silver-muted);">Lic No: MT/AA/14/671/4142324/2015[cite: 1]</p>
-                <p style="color: var(--neon-purple);">Manager: Mehdiya Negash Sherif[cite: 1]</p>
+
+            <!-- 🌐 MULTILINGUAL TELEMETRY MODULE -->
+            <div class="lang-control-panel">
+                <button class="lang-btn active" onclick="switchTelemetry('en', this)">EN</button>
+                <button class="lang-btn" onclick="switchTelemetry('am', this)">አማ</button>
+                <button class="lang-btn" onclick="switchTelemetry('ar', this)">العربية</button>
+            </div>
+
+            <div class="logo-text" style="text-align: inherit;">
+                <p style="color: var(--silver-muted);" id="nav-lic">Lic No: MT/AA/14/671/4142324/2015[cite: 1]</p>
+                <p style="color: var(--neon-purple);" id="nav-mgr">Manager: Mehdiya Negash Sherif[cite: 1]</p>
             </div>
         </div>
     </header>
 
     <!-- 🌌 GATEWAY HERO SECTION -->
     <section class="hero">
-        <h2>Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]</h2>
-        <p style="color: var(--silver-muted); max-width: 700px; margin: 0 auto;">
+        <h2 id="hero-title">Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]</h2>
+        <p style="color: var(--silver-muted); max-width: 700px; margin: 20px auto;" id="hero-desc">
             Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets[cite: 1].
         </p>
 
-        <!-- 🌍 INTERACTIVE TARGET RUNWAYS -->
+        <!-- 🌍 INTERACTIVE RUNWAYS -->
         <div class="flag-grid">
             <div class="flag-card">
                 <span class="flag-icon-large">🇸🇦</span>
-                <h3>SAUDI ARABIA[cite: 1]</h3>
-                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">Musaned Integrated[cite: 1]</p>
+                <h3 id="flag-ksa">SAUDI ARABIA[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;" class="sub-ksa">Musaned Integrated[cite: 1]</p>
             </div>
             <div class="flag-card">
                 <span class="flag-icon-large">🇰🇼</span>
-                <h3>KUWAIT[cite: 1]</h3>
-                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">PAM Checked[cite: 1]</p>
+                <h3 id="flag-kuw">KUWAIT[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;" class="sub-kuw">PAM Checked[cite: 1]</p>
             </div>
             <div class="flag-card">
                 <span class="flag-icon-large">🇯🇴</span>
-                <h3>JORDAN[cite: 1]</h3>
-                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">Bilateral Cleared[cite: 1]</p>
+                <h3 id="flag-jor">JORDAN[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;" class="sub-jor">Bilateral Cleared[cite: 1]</p>
             </div>
             <div class="flag-card">
                 <span class="flag-icon-large">🇦🇪</span>
-                <h3>UAE[cite: 1]</h3>
-                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">MoHRE Standards[cite: 1]</p>
+                <h3 id="flag-uae">UAE[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;" class="sub-uae">MoHRE Standards[cite: 1]</p>
             </div>
         </div>
     </section>
 
-    <!-- 🛠️ SECURE COMPLIANCE PIPELINE -->
-    <h3 class="section-title">THE TRANSIT MECHANISM</h3>
+    <!-- 🛠️ COMPLIANCE PIPELINE -->
+    <h3 class="section-title" id="sec-pipeline">THE TRANSIT MECHANISM</h3>
     <div class="pipeline-container">
         <div class="pipeline-card">
-            <div class="pipeline-num">Step 01[cite: 1]</div>
-            <h4>Demand Verification[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+            <div class="pipeline-num" id="p1-step">Step 01[cite: 1]</div>
+            <h4 id="p1-title">Demand Verification[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p1-desc">
                 Gulf agency attestation via Embassy validation, mapping workflows directly to the E-LMIS array[cite: 1].
             </p>
         </div>
         <div class="pipeline-card">
-            <div class="pipeline-num">Step 02[cite: 1]</div>
-            <h4>Talent Harvesting[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+            <div class="pipeline-num" id="p2-step">Step 02[cite: 1]</div>
+            <h4 id="p2-title">Talent Harvesting[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p2-desc">
                 Legal candidate matching tracking a strict minimum baseline of 25 Years Old for deployment[cite: 1].
             </p>
         </div>
         <div class="pipeline-card">
-            <div class="pipeline-num">Step 03[cite: 1]</div>
-            <h4>Biometric Bootcamp[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+            <div class="pipeline-num" id="p3-step">Step 03[cite: 1]</div>
+            <h4 id="p3-title">Biometric Bootcamp[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p3-desc">
                 GAMCA fitness testing coupled with a mandatory 21-day TVET training protocol for CoC verification[cite: 1].
             </p>
         </div>
         <div class="pipeline-card">
-            <div class="pipeline-num">Step 04[cite: 1]</div>
-            <h4>Logistics Manifest[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+            <div class="pipeline-num" id="p4-step">Step 04[cite: 1]</div>
+            <h4 id="p4-title">Logistics Manifest[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p4-desc">
                 Visa compilation via regional digital pathways (Tasheer/Enjaz) and exclusive Ethiopian Airlines booking[cite: 1].
             </p>
         </div>
     </div>
 
-    <!-- 📊 LOGISTICS & VALUE GRID -->
-    <h3 class="section-title">WAGE MATRIX & TARGET SCHEDULING</h3>
+    <!-- 📊 DATA MATRIX TABLES -->
+    <h3 class="section-title" id="sec-matrix">WAGE MATRIX & TARGET SCHEDULING</h3>
     <div class="table-container">
         <table>
             <thead>
-                <tr>
+                <tr id="table-head">
                     <th>Destination Region</th>
                     <th>Job Category Matrix</th>
                     <th>Experience Tier</th>
                     <th>Base Salary Scale</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="table-rows">
                 <tr>
                     <td>🇸🇦 Saudi Arabia[cite: 1]</td>
                     <td>Housemaid / Domestic Support[cite: 1]</td>
@@ -398,13 +449,171 @@
 
     <!-- ⚡ ACTION HUB CTAs -->
     <div class="cta-container">
-        <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'">
-            <i class="fa-solid fa-file-invoice" style="margin-right: 10px;"></i>Submit Demand Letter[cite: 1]
+        <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'" id="btn-demand">
+            <i class="fa-solid fa-file-invoice"></i>Submit Demand Letter[cite: 1]
         </button>
-        <button class="btn-neon" style="border-color: var(--neon-purple); color: var(--neon-purple);" onclick="window.location.href='https://wa.me/251922959544'">
-            <i class="fa-brands fa-whatsapp" style="margin-right: 10px;"></i>Initialize Candidate Link[cite: 1]
+        <button class="btn-neon" style="border-color: var(--neon-purple); color: var(--neon-purple);" onclick="window.location.href='https://wa.me/251922959544'" id="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>Initialize Candidate Link[cite: 1]
         </button>
     </div>
 
+    <!-- 🧠 PORTAL INTERACTION LOGIC ENGINE -->
+    <script>
+        const telemetryData = {
+            en: {
+                dir: "ltr",
+                navTitle: "ALEKHA FOREIGN EMPLOYMENT AGENT",
+                navSubtitle: "Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]",
+                navLic: "Lic No: MT/AA/14/671/4142324/2015[cite: 1]",
+                navMgr: "Manager: Mehdiya Negash Sherif[cite: 1]",
+                heroTitle: "Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]",
+                heroDesc: "Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets[cite: 1].",
+                pipelineTitle: "THE TRANSIT MECHANISM",
+                matrixTitle: "WAGE MATRIX & TARGET SCHEDULING",
+                btnDemand: '<i class="fa-solid fa-file-invoice"></i>Submit Demand Letter[cite: 1]',
+                btnWhatsapp: '<i class="fa-brands fa-whatsapp"></i>Initialize Candidate Link[cite: 1]',
+                flags: ["SAUDI ARABIA[cite: 1]", "KUWAIT[cite: 1]", "JORDAN[cite: 1]", "UAE[cite: 1]"],
+                subs: ["Musaned Integrated[cite: 1]", "PAM Checked[cite: 1]", "Bilateral Cleared[cite: 1]", "MoHRE Standards[cite: 1]"],
+                pSteps: ["Step 01[cite: 1]", "Step 02[cite: 1]", "Step 03[cite: 1]", "Step 04[cite: 1]"],
+                pTitles: ["Demand Verification[cite: 1]", "Talent Harvesting[cite: 1]", "Biometric Bootcamp[cite: 1]", "Logistics Manifest[cite: 1]"],
+                pDescs: [
+                    "Gulf agency attestation via Embassy validation, mapping workflows directly to the E-LMIS array[cite: 1].",
+                    "Legal candidate matching tracking a strict minimum baseline of 25 Years Old for deployment[cite: 1].",
+                    "GAMCA fitness testing coupled with a mandatory 21-day TVET training protocol for CoC verification[cite: 1].",
+                    "Visa compilation via regional digital pathways (Tasheer/Enjaz) and exclusive Ethiopian Airlines booking[cite: 1]."
+                ],
+                th: ["Destination Region", "Job Category Matrix", "Experience Tier", "Base Salary Scale"],
+                rows: [
+                    ["🇸🇦 Saudi Arabia[cite: 1]", "Housemaid / Domestic Support[cite: 1]", "First-Time / Fresh Entry[cite: 1]", "1000 SAR[cite: 1]"],
+                    ["🇸🇦 Saudi Arabia[cite: 1]", "Housemaid / Domestic Support[cite: 1]", "Veteran Tier (2+ Years Gulf Exp)[cite: 1]", "1200 SAR[cite: 1]"],
+                    ["🇦🇪 United Arab Emirates[cite: 1]", "Housemaid / Domestic Support[cite: 1]", "First-Time / Fresh Entry[cite: 1]", "1000 AED[cite: 1]"],
+                    ["🇯🇴 Jordan[cite: 1]", "Domestic Worker (Universal)[cite: 1]", "Minimum Legal Baseline[cite: 1]", "271 USD (Net)[cite: 1]"]
+                ]
+            },
+            am: {
+                dir: "ltr",
+                navTitle: "አልከሀ በውጭ ሀገር ስራና ሰራተኛ አገናኝ[cite: 1]",
+                navSubtitle: "በአዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተረጋገጠ[cite: 1]",
+                navLic: "የንግድ ፈቃድ: MT/AA/14/671/4142324/2015[cite: 1]",
+                navMgr: "ስራ አስኪያጅ: መኽዲያ ነጋሽ ሸሪፍ[cite: 1]",
+                heroTitle: "ብቃትን ከ <strong>ዘመናዊ የቴክኖሎጂ አሰራር</strong> ጋር እናገናኛለን[cite: 1]",
+                heroDesc: "ህጋዊ ምልመላ፣ በቲቪኢቲ (TVET) የሰለጠኑ ሰራተኞች እና በኢ-ኤልኤምአይኤስ (E-LMIS) የተደገፈ ቀልጣፋ አሰራር[cite: 1]።",
+                pipelineTitle: "የሂደት ደረጃዎች",
+                matrixTitle: "የደሞዝ እና የስምሪት ማውጫ",
+                btnDemand: '<i class="fa-solid fa-file-invoice"></i>የስራ ፍላጎት ሰነድ አስገባ[cite: 1]',
+                btnWhatsapp: '<i class="fa-brands fa-whatsapp"></i>በዋትስአፕ አሁኑኑ ይገናኙ[cite: 1]',
+                flags: ["ሳውዲ አረቢያ[cite: 1]", "ኩዌት[cite: 1]", "ጆርዳን[cite: 1]", "የተባበሩት አረብ ኤምሬትስ[cite: 1]"],
+                subs: ["በሙሳነድ የተሳለጠ[cite: 1]", "በPAM የተረጋገጠ[cite: 1]", "ህጋዊ ስምምነት ያለው[cite: 1]", "በMoHRE የተፈቀደ[cite: 1]"],
+                pSteps: ["ደረጃ 01[cite: 1]", "ደረጃ 02[cite: 1]", "ደረጃ 03[cite: 1]", "ደረጃ 04[cite: 1]"],
+                pTitles: ["የስራ ትዕዛዝ ማረጋገጥ[cite: 1]", "እጩዎችን መመልመል[cite: 1]", "የህክምና እና ስልጠና[cite: 1]", "ቪዛ እና ጉዞ[cite: 1]"],
+                pDescs: [
+                    "የባህረ ሰላጤው ሀገር ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል፣ የሥራ ትዕዛዙ በE-LMIS ፖርታል ላይ ይጫናል[cite: 1]።",
+                    "እጩዎችን በህጋዊ መንገድ መመልመል፤ ለቤት ሰራተኛ ዝቅተኛው የእድሜ ገደብ 25 ዓመት መሆን አለበት[cite: 1]።",
+                    "የጋምካ (GAMCA) የህክምና ምርመራ ማጠናቀቅ እና የ21 ቀን የቅድመ-ስምሪት ስልጠና በቲቪኢቲ መውሰድ[cite: 1]።",
+                    "በታሺር/ኤንጃዝ ቪዛ ማስመታት እና በኢትዮጵያ አየር መንገድ ብቻ የጉዞ ትኬት መቁረጥ[cite: 1]።"
+                ],
+                th: ["መዳረሻ ሀገር", "የስራ መደብ", "የልምድ ደረጃ", "የወር ደሞዝ መጠን"],
+                rows: [
+                    ["🇸🇦 ሳውዲ አረቢያ[cite: 1]", "የቤት ሰራተኛ[cite: 1]", "አዲስ / ለመጀመሪያ ጊዜ[cite: 1]", "1000 SAR[cite: 1]"],
+                    ["🇸🇦 ሳውዲ አረቢያ[cite: 1]", "የቤት ሰራተኛ[cite: 1]", "የባህረ ሰላጤ ሀገራት ልምድ ያለው[cite: 1]", "1200 SAR[cite: 1]"],
+                    ["🇦🇪 የተባበሩት አረብ ኤምሬትስ[cite: 1]", "የቤት ሰራተኛ[cite: 1]", "አዲስ / ለመጀመሪያ ጊዜ[cite: 1]", "1000 AED[cite: 1]"],
+                    ["🇯🇴 ጆርዳን[cite: 1]", "የቤት ሰራተኛ (ሁሉም)[cite: 1]", "ህጋዊ ዝቅተኛ ገደብ[cite: 1]", "271 USD (Net)[cite: 1]"]
+                ]
+            },
+            ar: {
+                dir: "rtl",
+                navTitle: "وكالة الخه للاستقدام الخارجي",
+                navSubtitle: "متوافق مع المراسيم الإثيوبية رقم 923/2016 و 1246/2021[cite: 1]",
+                navLic: "رقم الترخيص: MT/AA/14/671/4142324/2015[cite: 1]",
+                navMgr: "المدير العام: مهدية نقاش شريف[cite: 1]",
+                heroTitle: "ربط الكفاءات بـ <strong>البنية التحتية المستقبلية</strong>[cite: 1]",
+                heroDesc: "مصادر أخلاقية، وقنوات نشر معتمدة عبر مراكز التعليم الفني والمهني التابعة لوزارة العمل الإثيوبية E-LMIS[cite: 1].",
+                pipelineTitle: "آلية معالجة المعاملات والتأشيرات",
+                matrixTitle: "جدول الرواتب والمسارات المعتمدة",
+                btnDemand: '<i class="fa-solid fa-file-invoice"></i>تقديم طلب استقدام (تفويض)[cite: 1]',
+                btnWhatsapp: '<i class="fa-brands fa-whatsapp"></i>بدء الاتصال الفوري عبر الواتساب[cite: 1]',
+                flags: ["المملكة العربية السعودية[cite: 1]", "دولة الكويت[cite: 1]", "المملكة الأردنية[cite: 1]", "الإمارات العربية المتحدة[cite: 1]"],
+                subs: ["ربط مباشر مع منصة مساند[cite: 1]", "معتمد من الهيئة العامة للقوى العاملة[cite: 1]", "مسار قانوني ثنائي[cite: 1]", "مطابق لمعايير وزارة الموارد البشرية[cite: 1]"],
+                pSteps: ["الخطوة 01[cite: 1]", "الخطوة 02[cite: 1]", "الخطوة 03[cite: 1]", "الخطوة 04[cite: 1]"],
+                pTitles: ["توثيق الطلب[cite: 1]", "فرز واختيار الكفاءات[cite: 1]", "الفحص الطبي والتأهيل[cite: 1]", "تصدير التأشيرة والرحلة[cite: 1]"],
+                pDescs: [
+                    "التحقق من وكالة الخليج عبر السفارة الإثيوبية ورفع أمر العمل مباشرة على منصة E-LMIS الحكومية[cite: 1].",
+                    "اختيار العمالة بشكل قانوني مع الالتزام بالحد الأدنى للسن (25 عاماً للعمالة المنزلية)[cite: 1].",
+                    "إجراء الفحص الطبي المعتمد GAMCA وإكمال الدورة التأهيلية التدريبية لمدة 21 يوماً للحصول على شهادة الكفاءة CoC[cite: 1].",
+                    "إنهاء الإجراءات عبر منصات (تأشير / إنجاز) وحجز الرحلات حصرياً عبر الخطوط الجوية الإثيوبية[cite: 1]."
+                ],
+                th: ["الوجهة الدولية", "فئة الوظيفة المستهدفة", "مستوى الخبرة الكلية", "نطاق الراتب الشهري الصافي"],
+                rows: [
+                    ["🇸🇦 المملكة العربية السعودية[cite: 1]", "عاملة منزلية[cite: 1]", "جديد / لأول مرة[cite: 1]", "1000 ريال سعودي[cite: 1]"],
+                    ["🇸🇦 المملكة العربية السعودية[cite: 1]", "عاملة منزلية[cite: 1]", "خبرة سابقة في الخليج (سنتين+)[cite: 1]", "1200 ريال سعودي[cite: 1]"],
+                    ["🇦🇪 الإمارات العربية المتحدة[cite: 1]", "عاملة منزلية[cite: 1]", "جديد / لأول مرة[cite: 1]", "1000 درهم إماراتي[cite: 1]"],
+                    ["🇯🇴 الأردن[cite: 1]", "عاملة منزلية (شامل)[cite: 1]", "الحد الأدنى القانوني الصافي[cite: 1]", "271 دولار أمريكي[cite: 1]"]
+                ]
+            }
+        };
+
+        function switchTelemetry(lang, btn) {
+            // Toggle active class on language controller
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const data = telemetryData[lang];
+            
+            // Apply Layout Direction Alignment (for Arabic RTL support)
+            document.getElementById('portal-root').setAttribute('dir', data.dir);
+
+            // Update Header & Identity Nodes
+            document.getElementById('nav-title').innerText = data.navTitle;
+            document.getElementById('nav-subtitle').innerText = data.navSubtitle;
+            document.getElementById('nav-lic').innerText = data.navLic;
+            document.getElementById('nav-mgr').innerText = data.navMgr;
+
+            // Update Hero Modules
+            document.getElementById('hero-title').innerHTML = data.heroTitle;
+            document.getElementById('hero-desc').innerText = data.heroDesc;
+
+            // Update Destination Country Badges
+            document.getElementById('flag-ksa').innerText = data.flags[0];
+            document.getElementById('flag-kuw').innerText = data.flags[1];
+            document.getElementById('flag-jor').innerText = data.flags[2];
+            document.getElementById('flag-uae').innerText = data.flags[3];
+
+            document.querySelector('.sub-ksa').innerText = data.subs[0];
+            document.querySelector('.sub-kuw').innerText = data.subs[1];
+            document.querySelector('.sub-jor').innerText = data.subs[2];
+            document.querySelector('.sub-uae').innerText = data.subs[3];
+
+            // Update Process Mechanism Titles
+            document.getElementById('sec-pipeline').innerText = data.pipelineTitle;
+            document.getElementById('sec-matrix').innerText = data.matrixTitle;
+
+            // Update Steps Data Blocks
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`p${i}-step`).innerText = data.pSteps[i-1];
+                document.getElementById(`p${i}-title`).innerText = data.pTitles[i-1];
+                document.getElementById(`p${i}-desc`).innerText = data.pDescs[i-1];
+            }
+
+            // Update Compensation Table Header Matrix
+            const headerCells = document.getElementById('table-head').children;
+            for (let j = 0; j < headerCells.length; j++) {
+                headerCells[j].innerText = data.th[j];
+            }
+
+            // Update Compensation Table Dynamic Rows
+            const tableRows = document.getElementById('table-rows').children;
+            for (let k = 0; k < tableRows.length; k++) {
+                const cells = tableRows[k].children;
+                cells[0].innerText = data.rows[k][0];
+                cells[1].innerText = data.rows[k][1];
+                cells[2].innerText = data.rows[k][2];
+                cells[3].innerText = data.rows[k][3];
+            }
+
+            // Update Interface Action Core Buttons
+            document.getElementById('btn-demand').innerHTML = data.btnDemand;
+            document.getElementById('btn-whatsapp').innerHTML = data.btnWhatsapp;
+        }
+    </script>
 </body>
 </html>
