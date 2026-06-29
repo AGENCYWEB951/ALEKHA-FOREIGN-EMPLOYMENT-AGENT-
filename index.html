@@ -503,7 +503,79 @@
             <i class="fa-solid fa-user-plus"></i>Register to Work / ይመዝገቡ[cite: 1]
         </button>
     </div>
+<!-- NEW: MANDATORY BENEFITS SECTION -->
+<h3 class="section-title" id="sec-benefits">STATUTORY EMPLOYER OBLIGATIONS</h3>
+<div class="benefits-grid" id="benefits-grid">
+    <!-- Content injected via JS -->
+</div>
 
+<!-- OTHER SECTIONS -->
+<h3 class="section-title" id="sec-ethical">WORKER WELFARE & ETHICAL RECRUITMENT</h3>
+<div class="ethical-grid" id="ethical-grid">
+    <!-- Existing Content -->
+</div>
+
+<div class="cta-container">
+    <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'">Request Manpower</button>
+</div>
+
+<script>
+const telemetryData = {
+    en: {
+        navTitle: "ALEKHA FOREIGN EMPLOYMENT AGENT",
+        benefitsTitle: "STATUTORY EMPLOYER OBLIGATIONS",
+        benefits: [
+            {icon: "fa-utensils", title: "Food & Accommodation", desc: "Three nutritious meals daily and clean, safe living quarters provided at no cost."},
+            {icon: "fa-heart-pulse", title: "Full Medical Insurance", desc: "Paid entirely by the employer for the full duration of the 2-year contract."},
+            {icon: "fa-plane-departure", title: "Free Air Travel", desc: "Free one-way ticket to destination and round-trip upon contract completion."},
+            {icon: "fa-money-check-dollar", title: "Traceable Payments", desc: "Electronic salary processing via Musaned (KSA) or PAM (Kuwait)."},
+            {icon: "fa-bed", title: "Rest Periods", desc: "Minimum of 1 full day of rest per week, plus standard daily rest periods."}
+        ]
+    },
+    am: {
+        navTitle: "አልከሀ በውጭ ሀገር ስራና ሰራተኛ አገናኝ",
+        benefitsTitle: "የአሰሪው ህጋዊ ግዴታዎች",
+        benefits: [
+            {icon: "fa-utensils", title: "ምግብ እና ማረፊያ", desc: "በየቀኑ ሶስት ጊዜ የተመጣጠነ ምግብ እና ደህንነቱ የተጠበቀ ማረፊያ በነጻ።"},
+            {icon: "fa-heart-pulse", title: "የጤና መድን", desc: "ለ2 ዓመት የውል ዘመን ሙሉ በሙሉ በአሰሪው የሚሸፈን።"},
+            {icon: "fa-plane-departure", title: "የነጻ በረራ", desc: "ወደ መዳረሻ ሀገር ሲሄዱ እና ውል ሲጠናቀቅ ለተመላሽ ጉዞ የነጻ ትኬት።"},
+            {icon: "fa-money-check-dollar", title: "የክፍያ ስርዓት", desc: "በሙሳነድ (KSA) ወይም PAM (ኩዌት) በኩል በኤሌክትሮኒክስ የሚፈጸም ክፍያ።"},
+            {icon: "fa-bed", title: "የእረፍት ጊዜያት", desc: "በሳምንት ቢያንስ 1 ሙሉ ቀን እረፍት እና በየቀኑ የተመደበ የእረፍት ሰዓት።"}
+        ]
+    },
+    ar: {
+        navTitle: "وكالة الخه للاستقدام الخارجي",
+        benefitsTitle: "المزايا القانونية الإلزامية لصاحب العمل",
+        benefits: [
+            {icon: "fa-utensils", title: "الغذاء والسكن", desc: "توفير ثلاث وجبات يومياً ومسكن آمن ونظيف مجاناً."},
+            {icon: "fa-heart-pulse", title: "تأمين طبي شامل", desc: "مغطى بالكامل من قبل صاحب العمل طوال فترة العقد (سنتان)."},
+            {icon: "fa-plane-departure", title: "تذاكر طيران مجانية", desc: "تذكرة ذهاب للمضيف، وتذكرة عودة عند إتمام العقد."},
+            {icon: "fa-money-check-dollar", title: "مدفوعات موثقة", desc: "معالجة إلكترونية للرواتب عبر منصة مساند (السعودية) أو PAM (الكويت)."},
+            {icon: "fa-bed", title: "فترات الراحة", desc: "يوم كامل كحد أدنى من الراحة أسبوعياً، بالإضافة إلى فترات الراحة اليومية."}
+        ]
+    }
+};
+
+function switchTelemetry(lang, btn) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const data = telemetryData[lang];
+    
+    document.getElementById('nav-title').innerText = data.navTitle;
+    document.getElementById('sec-benefits').innerText = data.benefitsTitle;
+    
+    const container = document.getElementById('benefits-grid');
+    container.innerHTML = '';
+    data.benefits.forEach(item => {
+        container.innerHTML += `
+            <div class="benefit-card">
+                <i class="fa-solid ${item.icon}"></i>
+                <h4>${item.title}</h4>
+                <p style="font-size: 0.9rem; color: var(--silver-muted);">${item.desc}</p>
+            </div>
+        `;
+    });
+}
     <!-- 🧠 PORTAL INTERACTION LOGIC ENGINE -->
     <script>
         const telemetryData = {
