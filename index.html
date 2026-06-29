@@ -1,805 +1,736 @@
 <!DOCTYPE html>
 <html lang="en" id="portal-root">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALEKHA FOREIGN EMPLOYMENT AGENT | Futuristic Portal</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <style>
-        /* --- FUTURISTIC MATRIX DESIGN SYSTEM --- */
-        :root {
-            --bg-obsidian: #0b0f19;
-            --bg-card: #131a2c;
-            --neon-cyan: #00f2fe;
-            --neon-purple: #8a2be2;
-            --silver-quartz: #e2e8f0;
-            --silver-muted: #94a3b8;
-            --matrix-glow: 0px 0px 15px rgba(0, 242, 254, 0.4);
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALEKHA FOREIGN EMPLOYMENT AGENT | Futuristic Portal</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<style>
+/* --- FUTURISTIC MATRIX DESIGN SYSTEM --- */
+:root {
+--bg-obsidian: #0b0f19;
+--bg-card: #131a2c;
+--neon-cyan: #00f2fe;
+--neon-purple: #8a2be2;
+--silver-quartz: #e2e8f0;
+--silver-muted: #94a3b8;
+--matrix-glow: 0px 0px 15px rgba(0, 242, 254, 0.4);
+--transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Nyala', 'Cairo', Tahoma, sans-serif;
-        }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', 'Nyala', 'Cairo', Tahoma, sans-serif;
+}
 
-        body {
-            background-color: var(--bg-obsidian);
-            color: var(--silver-quartz);
-            overflow-x: hidden;
-            line-height: 1.6;
-            transition: var(--transition-smooth);
-        }
+body {
+background-color: var(--bg-obsidian);
+color: var(--silver-quartz);
+overflow-x: hidden;
+line-height: 1.6;
+transition: var(--transition-smooth);
+}
 
-        /* --- TELEMETRY GLOW HEADER --- */
-        header {
-            background: linear-gradient(180deg, #111827 0%, rgba(11, 15, 25, 0.9) 100%);
-            border-bottom: 2px solid rgba(0, 242, 254, 0.2);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
+/* --- TELEMETRY GLOW HEADER --- */
+header {
+background: linear-gradient(180deg, #111827 0%, rgba(11, 15, 25, 0.9) 100%);
+border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+padding: 1.5rem 2rem;
+position: sticky;
+top: 0;
+z-index: 1000;
+backdrop-filter: blur(12px);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
 
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
+.header-container {
+max-width: 1400px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
 
-        .logo-block {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+.logo-block {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
 
-        .logo-icon {
-            font-size: 2.2rem;
-            color: var(--neon-cyan);
-            animation: core-spin 4s linear infinite;
-        }
+.logo-icon {
+font-size: 2.2rem;
+color: var(--neon-cyan);
+animation: core-spin 4s linear infinite;
+}
 
-        .logo-text h1 {
-            font-size: 1.4rem;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #ffffff, var(--silver-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.logo-text h1 {
+font-size: 1.4rem;
+letter-spacing: 2px;
+background: linear-gradient(90deg, #ffffff, var(--silver-muted));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
 
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--neon-cyan);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.logo-text p {
+font-size: 0.75rem;
+color: var(--neon-cyan);
+text-transform: uppercase;
+letter-spacing: 1px;
+}
 
-        /* --- NEON LANGUAGE TOGGLER --- */
-        .lang-control-panel {
-            display: flex;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            padding: 4px;
-            border-radius: 30px;
-            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.05);
-        }
+/* --- NEON LANGUAGE TOGGLER --- */
+.lang-control-panel {
+display: flex;
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(0, 242, 254, 0.3);
+padding: 4px;
+border-radius: 30px;
+box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.05);
+}
 
-        .lang-btn {
-            background: transparent;
-            border: none;
-            color: var(--silver-muted);
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
+.lang-btn {
+background: transparent;
+border: none;
+color: var(--silver-muted);
+padding: 0.5rem 1.2rem;
+font-size: 0.85rem;
+font-weight: 600;
+border-radius: 25px;
+cursor: pointer;
+transition: var(--transition-smooth);
+}
 
-        .lang-btn.active {
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-            color: var(--bg-obsidian);
-            box-shadow: var(--matrix-glow);
-        }
+.lang-btn.active {
+background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+color: var(--bg-obsidian);
+box-shadow: var(--matrix-glow);
+}
 
-        .lang-btn:hover:not(.active) {
-            color: var(--neon-cyan);
-        }
+.lang-btn:hover:not(.active) {
+color: var(--neon-cyan);
+}
 
-        /* --- HERO & FLAGS DISPLAY --- */
-        .hero {
-            max-width: 1400px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
+/* --- HERO & FLAGS DISPLAY --- */
+.hero {
+max-width: 1400px;
+margin: 3rem auto;
+padding: 0 2rem;
+text-align: center;
+}
 
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
+.hero h2 {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+font-weight: 300;
+}
 
-        .hero h2 strong {
-            color: var(--neon-cyan);
-            text-shadow: var(--matrix-glow);
-        }
+.hero h2 strong {
+color: var(--neon-cyan);
+text-shadow: var(--matrix-glow);
+}
 
-        .flag-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
+.flag-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 1.5rem;
+margin: 3rem 0;
+}
 
-        /* --- POP-IN / OUT INTERACTIVE CARDS --- */
-        .flag-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: var(--transition-smooth);
-            cursor: pointer;
-            transform: scale(0.98);
-            opacity: 0.95;
-            text-align: inherit;
-        }
+/* --- POP-IN / OUT INTERACTIVE CARDS --- */
+.flag-card {
+background: var(--bg-card);
+border: 1px solid rgba(255, 255, 255, 0.05);
+border-radius: 12px;
+padding: 2rem;
+transition: var(--transition-smooth);
+cursor: pointer;
+transform: scale(0.98);
+opacity: 0.95;
+text-align: inherit;
+}
 
-        .flag-card:hover {
-            transform: scale(1.05);
-            opacity: 1;
-            border-color: var(--neon-cyan);
-            box-shadow: var(--matrix-glow);
-        }
+.flag-card:hover {
+transform: scale(1.05);
+opacity: 1;
+border-color: var(--neon-cyan);
+box-shadow: var(--matrix-glow);
+}
 
-        .flag-icon-large {
-            font-size: 3.8rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            transition: var(--transition-smooth);
-        }
+.flag-icon-large {
+font-size: 3.8rem;
+margin-bottom: 1rem;
+display: inline-block;
+transition: var(--transition-smooth);
+}
 
-        .flag-card:hover .flag-icon-large {
-            transform: translateY(-5px) scale(1.1);
-        }
+.flag-card:hover .flag-icon-large {
+transform: translateY(-5px) scale(1.1);
+}
 
-        /* --- STRUCTURAL PIPELINE LAYOUT --- */
-        .section-title {
-            text-align: center;
-            margin: 5rem 0 2rem;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-            position: relative;
-        }
+/* --- STRUCTURAL PIPELINE LAYOUT --- */
+.section-title {
+text-align: center;
+margin: 5rem 0 2rem;
+font-size: 2.2rem;
+letter-spacing: 1px;
+position: relative;
+}
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--neon-cyan);
-            margin: 0.5rem auto 0;
-            box-shadow: var(--matrix-glow);
-        }
+.section-title::after {
+content: '';
+display: block;
+width: 80px;
+height: 3px;
+background: var(--neon-cyan);
+margin: 0.5rem auto 0;
+box-shadow: var(--matrix-glow);
+}
 
-        .pipeline-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
-        }
+.pipeline-container {
+max-width: 1300px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+padding: 0 2rem;
+}
 
-        .pipeline-card {
-            background: rgba(19, 26, 44, 0.6);
-            border-left: 4px solid var(--neon-purple);
-            padding: 2rem;
-            border-radius: 0 12px 12px 0;
-            transition: var(--transition-smooth);
-        }
+.pipeline-card {
+background: rgba(19, 26, 44, 0.6);
+border-left: 4px solid var(--neon-purple);
+padding: 2rem;
+border-radius: 0 12px 12px 0;
+transition: var(--transition-smooth);
+}
 
-        html[dir="rtl"] .pipeline-card {
-            border-left: none;
-            border-right: 4px solid var(--neon-purple);
-            border-radius: 12px 0 0 12px;
-        }
+html[dir="rtl"] .pipeline-card {
+border-left: none;
+border-right: 4px solid var(--neon-purple);
+border-radius: 12px 0 0 12px;
+}
 
-        .pipeline-card:hover {
-            border-left-color: var(--neon-cyan);
-            border-right-color: var(--neon-cyan);
-            background: var(--bg-card);
-            transform: translateY(-5px);
-        }
+.pipeline-card:hover {
+border-left-color: var(--neon-cyan);
+border-right-color: var(--neon-cyan);
+background: var(--bg-card);
+transform: translateY(-5px);
+}
 
-        .pipeline-num {
-            font-size: 0.85rem;
-            color: var(--neon-cyan);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
+.pipeline-num {
+font-size: 0.85rem;
+color: var(--neon-cyan);
+font-weight: bold;
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+letter-spacing: 1px;
+}
 
-        /* --- MATRIX DATA TABLES --- */
-        .table-container {
-            max-width: 1300px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            overflow-x: auto;
-        }
+/* --- MATRIX DATA TABLES --- */
+.table-container {
+max-width: 1300px;
+margin: 2rem auto;
+padding: 0 2rem;
+overflow-x: auto;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+table {
+width: 100%;
+border-collapse: collapse;
+background: var(--bg-card);
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-        th {
-            background: rgba(0, 242, 254, 0.1);
-            color: var(--neon-cyan);
-            text-align: inherit;
-            padding: 1.2rem;
-            font-weight: 600;
-            border-bottom: 2px solid rgba(0, 242, 254, 0.2);
-        }
+th {
+background: rgba(0, 242, 254, 0.1);
+color: var(--neon-cyan);
+text-align: inherit;
+padding: 1.2rem;
+font-weight: 600;
+border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+}
 
-        td {
-            padding: 1.2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--silver-quartz);
-            text-align: inherit;
-        }
+td {
+padding: 1.2rem;
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+color: var(--silver-quartz);
+text-align: inherit;
+}
 
-        tr:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
+tr:hover {
+background: rgba(255, 255, 255, 0.02);
+}
 
-        /* --- ETHICAL COMPLIANCE GRID --- */
-        .ethical-grid {
-            max-width: 1300px;
-            margin: 2rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
-        }
+/* --- ETHICAL COMPLIANCE GRID --- */
+.ethical-grid {
+max-width: 1300px;
+margin: 2rem auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+padding: 0 2rem;
+}
 
-        .ethical-card {
-            background: linear-gradient(135deg, rgba(19,26,44,0.8) 0%, rgba(11,15,25,0.8) 100%);
-            border: 1px solid rgba(138, 43, 226, 0.2);
-            padding: 2.5rem;
-            border-radius: 12px;
-            position: relative;
-            transition: var(--transition-smooth);
-        }
+.ethical-card {
+background: linear-gradient(135deg, rgba(19,26,44,0.8) 0%, rgba(11,15,25,0.8) 100%);
+border: 1px solid rgba(138, 43, 226, 0.2);
+padding: 2.5rem;
+border-radius: 12px;
+position: relative;
+transition: var(--transition-smooth);
+}
 
-        .ethical-card:hover {
-            border-color: var(--neon-purple);
-            box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.2);
-            transform: scale(1.02);
-        }
+.ethical-card:hover {
+border-color: var(--neon-purple);
+box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.2);
+transform: scale(1.02);
+}
 
-        .ethical-card i {
-            font-size: 2rem;
-            color: var(--neon-cyan);
-            margin-bottom: 1.2rem;
-        }
+.ethical-card i {
+font-size: 2rem;
+color: var(--neon-cyan);
+margin-bottom: 1.2rem;
+}
 
-        /* --- HIGH-INTENSITY CTA BUTTONS --- */
-        .cta-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 5rem 0;
-            padding: 0 2rem;
-            flex-wrap: wrap;
-        }
+/* --- HIGH-INTENSITY CTA BUTTONS --- */
+.cta-container {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin: 5rem 0;
+padding: 0 2rem;
+flex-wrap: wrap;
+}
 
-        .btn-neon {
-            background: transparent;
-            border: 2px solid var(--neon-cyan);
-            color: var(--neon-cyan);
-            padding: 1.2rem 3rem;
-            font-size: 1.05rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.btn-neon {
+background: transparent;
+border: 2px solid var(--neon-cyan);
+color: var(--neon-cyan);
+padding: 1.2rem 3rem;
+font-size: 1.05rem;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+border-radius: 50px;
+cursor: pointer;
+transition: var(--transition-smooth);
+display: flex;
+align-items: center;
+gap: 12px;
+}
 
-        .btn-neon:hover {
-            background: var(--neon-cyan);
-            color: var(--bg-obsidian);
-            box-shadow: var(--matrix-glow);
-            transform: scale(1.05);
-        }
+.btn-neon:hover {
+background: var(--neon-cyan);
+color: var(--bg-obsidian);
+box-shadow: var(--matrix-glow);
+transform: scale(1.05);
+}
 
-        /* --- ANIMATIONS ENGINE --- */
-        @keyframes core-spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* --- ANIMATIONS ENGINE --- */
+@keyframes core-spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
 
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; text-align: center; }
-            .hero h2 { font-size: 1.8rem; }
-            .cta-container { flex-direction: column; gap: 1rem; }
-            .btn-neon { width: 100%; justify-content: center; }
-        }
-    </style>
+@media (max-width: 768px) {
+.header-container { flex-direction: column; text-align: center; }
+.hero h2 { font-size: 1.8rem; }
+.cta-container { flex-direction: column; gap: 1rem; }
+.btn-neon { width: 100%; justify-content: center; }
+}
+</style>
 </head>
 <body>
 
-    <!-- 📡 TELEMETRY INTERACTIVE HEADER -->
-    <header>
-        <div class="header-container">
-            <div class="logo-block">
-                <i class="fa-solid fa-satellite-dish logo-icon"></i>
-                <div class="logo-text">
-                    <h1 id="nav-title">ALEKHA FOREIGN EMPLOYMENT AGENT</h1>
-                    <p id="nav-subtitle">Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]</p>
-                </div>
-            </div>
+<!-- 📡 TELEMETRY INTERACTIVE HEADER -->
+<header>
+<div class="header-container">
+<div class="logo-block">
+<i class="fa-solid fa-satellite-dish logo-icon"></i>
+<div class="logo-text">
+<h1 id="nav-title">ALEKHA FOREIGN EMPLOYMENT AGENT</h1>
+<p id="nav-subtitle">Proclamation No. 923/2016 & 1246/2021 Compliant</p>
+</div>
+</div>
 
-            <!-- 🌐 MULTILINGUAL TELEMETRY MODULE -->
-            <div class="lang-control-panel">
-                <button class="lang-btn active" onclick="switchTelemetry('en', this)">EN</button>
-                <button class="lang-btn" onclick="switchTelemetry('am', this)">አማ</button>
-                <button class="lang-btn" onclick="switchTelemetry('ar', this)">العربية</button>
-            </div>
+<!-- 🌐 MULTILINGUAL TELEMETRY MODULE -->
+<div class="lang-control-panel">
+<button class="lang-btn active" onclick="switchTelemetry('en', this)">EN</button>
+<button class="lang-btn" onclick="switchTelemetry('am', this)">አማ</button>
+<button class="lang-btn" onclick="switchTelemetry('ar', this)">العربية</button>
+</div>
 
-            <div class="logo-text" style="text-align: inherit;">
-                <p style="color: var(--silver-muted);" id="nav-lic">Lic No: MT/AA/14/671/4142324/2015[cite: 1]</p>
-                <p style="color: var(--neon-purple);" id="nav-mgr">Manager: Mehdiya Negash Sherif[cite: 1]</p>
-            </div>
-        </div>
-    </header>
+<div class="logo-text" style="text-align: inherit;">
+<p style="color: var(--silver-muted);" id="nav-lic">Lic No: MT/AA/14/671/4142324/2015</p>
+<p style="color: var(--neon-purple);" id="nav-mgr">Manager: Mehdiya Negash Sherif</p>
+</div>
+</div>
+</header>
 
-    <!-- 🌌 GATEWAY HERO SECTION -->
-    <section class="hero">
-        <h2 id="hero-title">Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]</h2>
-        <p style="color: var(--silver-muted); max-width: 800px; margin: 20px auto;" id="hero-desc">
-            Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets[cite: 1].
-        </p>
+<!-- 🌌 GATEWAY HERO SECTION -->
+<section class="hero">
+<h2 id="hero-title">Bridging Talent With <strong>Futuristic Infrastructure</strong></h2>
+<p style="color: var(--silver-muted); max-width: 800px; margin: 20px auto;" id="hero-desc">
+Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets.
+</p>
 
-        <!-- 🌍 INTERACTIVE RUNWAYS -->
-        <div class="flag-grid">
-            <div class="flag-card">
-                <span class="flag-icon-large">🇸🇦</span>
-                <h3 id="flag-ksa">SAUDI ARABIA (KSA) ROUTE[cite: 1]</h3>
-                <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-ksa-desc">Direct integration with the Musaned platform, ensuring transparent electronic e-contract processing[cite: 1].</p>
-            </div>
-            <div class="flag-card">
-                <span class="flag-icon-large">🇦🇪</span>
-                <h3 id="flag-uae">UNITED ARAB EMIRATES (UAE)[cite: 1]</h3>
-                <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-uae-desc">Aligned with domestic worker centers (Tadbeer Centers) matching MoHRE vetting standards[cite: 1].</p>
-            </div>
-            <div class="flag-card">
-                <span class="flag-icon-large">🇰🇼</span>
-                <h3 id="flag-kuw">KUWAIT, QATAR & OMAN[cite: 1]</h3>
-                <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-kuw-desc">Fast processing and strict compliance with individual country bilateral labor agreements[cite: 1].</p>
-            </div>
-        </div>
-    </section>
+<!-- 🌍 INTERACTIVE RUNWAYS -->
+<div class="flag-grid">
+<div class="flag-card">
+<span class="flag-icon-large">🇸🇦</span>
+<h3 id="flag-ksa">SAUDI ARABIA (KSA) ROUTE</h3>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-ksa-desc">Direct integration with the Musaned platform, ensuring transparent electronic e-contract processing.</p>
+</div>
+<div class="flag-card">
+<span class="flag-icon-large">🇦🇪</span>
+<h3 id="flag-uae">UNITED ARAB EMIRATES (UAE)</h3>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-uae-desc">Aligned with domestic worker centers (Tadbeer Centers) matching MoHRE vetting standards.</p>
+</div>
+<div class="flag-card">
+<span class="flag-icon-large">🇰🇼</span>
+<h3 id="flag-kuw">KUWAIT, QATAR & OMAN</h3>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="flag-kuw-desc">Fast processing and strict compliance with individual country bilateral labor agreements.</p>
+</div>
+</div>
+</section>
 
-    <!-- 🛠️ COMPLIANCE PIPELINE -->
-    <h3 class="section-title" id="sec-pipeline">A. B2B PARTNER PORTAL & PROCESS</h3>
-    <div class="pipeline-container">
-        <div class="pipeline-card">
-            <div class="pipeline-num" id="p1-step">Step 1[cite: 1]</div>
-            <h4 id="p1-title">Agency Partnership & Attestation[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p1-desc">
-                Verify the Gulf agency/sponsor via Ethiopian Consulates. Upload Demand Letters onto the E-LMIS system[cite: 1].
-            </p>
-        </div>
-        <div class="pipeline-card">
-            <div class="pipeline-num" id="p2-step">Step 2[cite: 1]</div>
-            <h4 id="p2-title">Candidate Sourcing & Registration[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p2-desc">
-                Source candidates legally to register in the national system. Minimum deployment age: 25 years old[cite: 1].
-            </p>
-        </div>
-        <div class="pipeline-card">
-            <div class="pipeline-num" id="p3-step">Step 3[cite: 1]</div>
-            <h4 id="p3-title">Medical Clearance & TVET Training[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p3-desc">
-                Candidates undergo GAMCA medical exams and mandatory 21-day pre-departure training to obtain a CoC[cite: 1].
-            </p>
-        </div>
-        <div class="pipeline-card">
-            <div class="pipeline-num" id="p4-step">Step 4[cite: 1]</div>
-            <h4 id="p4-title">Visa Stamping & Flight Booking[cite: 1]</h4>
-            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p4-desc">
-                Process visas via Tasheer / Enjaz / MoFA. Book travel exclusively through Ethiopian Airlines as mandated[cite: 1].
-            </p>
-        </div>
-    </div>
+<!-- 🛠️ COMPLIANCE PIPELINE -->
+<h3 class="section-title" id="sec-pipeline">A. B2B PARTNER PORTAL & PROCESS</h3>
+<div class="pipeline-container">
+<div class="pipeline-card">
+<div class="pipeline-num" id="p1-step">Step 1</div>
+<h4 id="p1-title">Agency Partnership & Attestation</h4>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p1-desc">
+Verify the Gulf agency/sponsor via Ethiopian Consulates. Upload Demand Letters onto the E-LMIS system.
+</p>
+</div>
+<div class="pipeline-card">
+<div class="pipeline-num" id="p2-step">Step 2</div>
+<h4 id="p2-title">Candidate Sourcing & Registration</h4>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p2-desc">
+Source candidates legally to register in the national system. Minimum deployment age: 25 years old.
+</p>
+</div>
+<div class="pipeline-card">
+<div class="pipeline-num" id="p3-step">Step 3</div>
+<h4 id="p3-title">Medical Clearance & TVET Training</h4>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p3-desc">
+Candidates undergo GAMCA medical exams and mandatory 21-day pre-departure training to obtain a CoC.
+</p>
+</div>
+<div class="pipeline-card">
+<div class="pipeline-num" id="p4-step">Step 4</div>
+<h4 id="p4-title">Visa Stamping & Flight Booking</h4>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;" id="p4-desc">
+Process visas via Tasheer / Enjaz / MoFA. Book travel exclusively through Ethiopian Airlines as mandated.
+</p>
+</div>
+</div>
 
-    <!-- 📊 CORE CAPABILITIES GRID -->
-    <h3 class="section-title" id="sec-matrix">CORE CAPABILITIES GRID</h3>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr id="table-head">
-                    <th>Feature[cite: 1]</th>
-                    <th>What We Provide[cite: 1]</th>
-                    <th>Why It Matters[cite: 1]</th>
-                </tr>
-            </thead>
-            <tbody id="table-rows">
-                <tr>
-                    <td style="color: var(--neon-cyan); font-weight: bold;">Language & Cultural Training[cite: 1]</td>
-                    <td>Basic Arabic, household vocabulary, and Middle Eastern cultural norms[cite: 1].</td>
-                    <td>Minimizes early-stage communication gaps[cite: 1].</td>
-                </tr>
-                <tr>
-                    <td style="color: var(--neon-cyan); font-weight: bold;">Modern Appliances Training[cite: 1]</td>
-                    <td>Hands-on experience with washing machines, smart vacuums, microwaves, and ironers[cite: 1].</td>
-                    <td>Prevents accidental equipment damage[cite: 1].</td>
-                </tr>
-                <tr>
-                    <td style="color: var(--neon-cyan); font-weight: bold;">CoC Certification[cite: 1]</td>
-                    <td>Compliance with the latest 2026 MoLS guidelines for technical qualification[cite: 1].</td>
-                    <td>Guarantees legal clearance for exit[cite: 1].</td>
-                </tr>
-                <tr>
-                    <td style="color: var(--neon-cyan); font-weight: bold;">Post-Placement Support[cite: 1]</td>
-                    <td>Dedicated case officers who mediate between worker and employer over WhatsApp/Phone[cite: 1].</td>
-                    <td>Reduces absconding and protects worker welfare[cite: 1].</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<!-- 📊 CORE CAPABILITIES GRID -->
+<h3 class="section-title" id="sec-matrix">CORE CAPABILITIES GRID</h3>
+<div class="table-container">
+<table>
+<thead>
+<tr id="table-head">
+<th>Feature</th>
+<th>What We Provide</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody id="table-rows">
+<tr>
+<td style="color: var(--neon-cyan); font-weight: bold;">Language & Cultural Training</td>
+<td>Basic Arabic, household vocabulary, and Middle Eastern cultural norms.</td>
+<td>Minimizes early-stage communication gaps.</td>
+</tr>
+<tr>
+<td style="color: var(--neon-cyan); font-weight: bold;">Modern Appliances Training</td>
+<td>Hands-on experience with washing machines, smart vacuums, microwaves, and ironers.</td>
+<td>Prevents accidental equipment damage.</td>
+</tr>
+<tr>
+<td style="color: var(--neon-cyan); font-weight: bold;">CoC Certification</td>
+<td>Compliance with the latest 2026 MoLS guidelines for technical qualification.</td>
+<td>Guarantees legal clearance for exit.</td>
+</tr>
+<tr>
+<td style="color: var(--neon-cyan); font-weight: bold;">Post-Placement Support</td>
+<td>Dedicated case officers who mediate between worker and employer over WhatsApp/Phone.</td>
+<td>Reduces absconding and protects worker welfare.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-    <!-- 🛡️ WORKER WELFARE & ETHICAL RECRUITMENT -->
-    <h3 class="section-title" id="sec-ethical">WORKER WELFARE & ETHICAL RECRUITMENT</h3>
-    <div class="ethical-grid">
-        <div class="ethical-card">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <h4 id="eth1-title">Our Zero-Fee Policy[cite: 1]</h4>
-            <p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth1-desc">
-                In complete compliance with Ethiopian Law, we never charge recruitment, flight, or medical fees to domestic workers. All costs are covered legally by the employer[cite: 1].
-            </p>
-        </div>
-        <div class="ethical-card">
-            <i class="fa-solid fa-building-shield"></i>
-            <h4 id="eth2-title">Embassy Registration[cite: 1]</h4>
-            <p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth2-desc">
-                Every worker deployed by our agency is fully registered with the official Ethiopian Embassy in her respective destination country to safeguard ongoing metrics[cite: 1].
-            </p>
-        </div>
-        <div class="ethical-card">
-            <i class="fa-solid fa-headset"></i>
-            <h4 id="eth3-title">24/7 Crisis Hotline[cite: 1]</h4>
-            <p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth3-desc">
-                We maintain an active, secure WhatsApp helpline loop for our deployed workers to report deployment issues, health concerns, or contract breaches immediately[cite: 1].
-            </p>
-        </div>
-    </div>
+<!-- 🛡️ WORKER WELFARE & ETHICAL RECRUITMENT -->
+<h3 class="section-title" id="sec-ethical">WORKER WELFARE & ETHICAL RECRUITMENT</h3>
+<div class="ethical-grid">
+<div class="ethical-card">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+<h4 id="eth1-title">Our Zero-Fee Policy</h4>
+<p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth1-desc">
+In complete compliance with Ethiopian Law, we never charge recruitment, flight, or medical fees to domestic workers. All costs are covered legally by the employer.
+</p>
+</div>
+<div class="ethical-card">
+<i class="fa-solid fa-building-shield"></i>
+<h4 id="eth2-title">Embassy Registration</h4>
+<p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth2-desc">
+Every worker deployed by our agency is fully registered with the official Ethiopian Embassy in her respective destination country to safeguard ongoing metrics.
+</p>
+</div>
+<div class="ethical-card">
+<i class="fa-solid fa-headset"></i>
+<h4 id="eth3-title">24/7 Crisis Hotline</h4>
+<p style="font-size: 0.95rem; color: var(--silver-muted); margin-top: 0.5rem;" id="eth3-desc">
+We maintain an active, secure WhatsApp helpline loop for our deployed workers to report deployment issues, health concerns, or contract breaches immediately.
+</p>
+</div>
+</div>
 
-    <!-- ⚡ ACTION HUB CTAs -->
-    <div class="cta-container">
-        <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com?subject=Demand%20Letter%20Inquiry'" id="btn-demand">
-            <i class="fa-solid fa-file-shield"></i>Request Manpower / Partner With Us[cite: 1]
-        </button>
-        <button class="btn-neon" style="border-color: var(--neon-purple); color: var(--neon-purple);" onclick="window.location.href='mailto:Alekhaagency@gmail.com?subject=Job%20Seeker%20Registration'" id="btn-whatsapp">
-            <i class="fa-solid fa-user-plus"></i>Register to Work / ይመዝገቡ[cite: 1]
-        </button>
-    </div>
+<!-- ⚡ ACTION HUB CTAs -->
+<div class="cta-container">
+<button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com?subject=Demand%20Letter%20Inquiry'" id="btn-demand">
+<i class="fa-solid fa-file-shield"></i>Request Manpower / Partner With Us
+</button>
+<button class="btn-neon" style="border-color: var(--neon-purple); color: var(--neon-purple);" onclick="window.location.href='mailto:Alekhaagency@gmail.com?subject=Job%20Seeker%20Registration'" id="btn-whatsapp">
+<i class="fa-solid fa-user-plus"></i>Register to Work / ይመዝገቡ
+</button>
+</div>
+
 <!-- NEW: MANDATORY BENEFITS SECTION -->
 <h3 class="section-title" id="sec-benefits">STATUTORY EMPLOYER OBLIGATIONS</h3>
 <div class="benefits-grid" id="benefits-grid">
-    <!-- Content injected via JS -->
-</div>
-
-<!-- OTHER SECTIONS -->
-<h3 class="section-title" id="sec-ethical">WORKER WELFARE & ETHICAL RECRUITMENT</h3>
-<div class="ethical-grid" id="ethical-grid">
-    <!-- Existing Content -->
-</div>
-<!-- Floating Social Contact Bar -->
-<div class="social-float">
-    <a href="https://wa.me/251922959544" target="_blank" class="social-icon whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a href="https://t.me/+251922959544" target="_blank" class="social-icon telegram">
-        <i class="fa-brands fa-telegram"></i>
-    </a>
-</div>
-
-<style>
-.social-float {
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 2000;
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    transition: var(--transition-smooth);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.whatsapp { background-color: #25d366; }
-.telegram { background-color: #0088cc; }
-
-.social-icon:hover {
-    transform: scale(1.15);
-    box-shadow: var(--matrix-glow);
-}
-</style>
-<div class="cta-container">
-    <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'">Request Manpower</button>
 </div>
 
 <script>
 const telemetryData = {
-    en: {
-        navTitle: "ALEKHA FOREIGN EMPLOYMENT AGENT",
-        benefitsTitle: "STATUTORY EMPLOYER OBLIGATIONS",
-        benefits: [
-            {icon: "fa-utensils", title: "Food & Accommodation", desc: "Three nutritious meals daily and clean, safe living quarters provided at no cost."},
-            {icon: "fa-heart-pulse", title: "Full Medical Insurance", desc: "Paid entirely by the employer for the full duration of the 2-year contract."},
-            {icon: "fa-plane-departure", title: "Free Air Travel", desc: "Free one-way ticket to destination and round-trip upon contract completion."},
-            {icon: "fa-money-check-dollar", title: "Traceable Payments", desc: "Electronic salary processing via Musaned (KSA) or PAM (Kuwait)."},
-            {icon: "fa-bed", title: "Rest Periods", desc: "Minimum of 1 full day of rest per week, plus standard daily rest periods."}
-        ]
-    },
-    am: {
-        navTitle: "አልከሀ በውጭ ሀገር ስራና ሰራተኛ አገናኝ",
-        benefitsTitle: "የአሰሪው ህጋዊ ግዴታዎች",
-        benefits: [
-            {icon: "fa-utensils", title: "ምግብ እና ማረፊያ", desc: "በየቀኑ ሶስት ጊዜ የተመጣጠነ ምግብ እና ደህንነቱ የተጠበቀ ማረፊያ በነጻ።"},
-            {icon: "fa-heart-pulse", title: "የጤና መድን", desc: "ለ2 ዓመት የውል ዘመን ሙሉ በሙሉ በአሰሪው የሚሸፈን።"},
-            {icon: "fa-plane-departure", title: "የነጻ በረራ", desc: "ወደ መዳረሻ ሀገር ሲሄዱ እና ውል ሲጠናቀቅ ለተመላሽ ጉዞ የነጻ ትኬት።"},
-            {icon: "fa-money-check-dollar", title: "የክፍያ ስርዓት", desc: "በሙሳነድ (KSA) ወይም PAM (ኩዌት) በኩል በኤሌክትሮኒክስ የሚፈጸም ክፍያ።"},
-            {icon: "fa-bed", title: "የእረፍት ጊዜያት", desc: "በሳምንት ቢያንስ 1 ሙሉ ቀን እረፍት እና በየቀኑ የተመደበ የእረፍት ሰዓት።"}
-        ]
-    },
-    ar: {
-        navTitle: "وكالة الخه للاستقدام الخارجي",
-        benefitsTitle: "المزايا القانونية الإلزامية لصاحب العمل",
-        benefits: [
-            {icon: "fa-utensils", title: "الغذاء والسكن", desc: "توفير ثلاث وجبات يومياً ومسكن آمن ونظيف مجاناً."},
-            {icon: "fa-heart-pulse", title: "تأمين طبي شامل", desc: "مغطى بالكامل من قبل صاحب العمل طوال فترة العقد (سنتان)."},
-            {icon: "fa-plane-departure", title: "تذاكر طيران مجانية", desc: "تذكرة ذهاب للمضيف، وتذكرة عودة عند إتمام العقد."},
-            {icon: "fa-money-check-dollar", title: "مدفوعات موثقة", desc: "معالجة إلكترونية للرواتب عبر منصة مساند (السعودية) أو PAM (الكويت)."},
-            {icon: "fa-bed", title: "فترات الراحة", desc: "يوم كامل كحد أدنى من الراحة أسبوعياً، بالإضافة إلى فترات الراحة اليومية."}
-        ]
-    }
+en: {
+dir: "ltr",
+navTitle: "ALEKHA FOREIGN EMPLOYMENT AGENT",
+navSubtitle: "Proclamation No. 923/2016 & 1246/2021 Compliant",
+navLic: "Lic No: MT/AA/14/671/4142324/2015",
+navMgr: "Manager: Mehdiya Negash Sherif",
+heroTitle: "Bridging Talent With <strong>Futuristic Infrastructure</strong>",
+heroDesc: "Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets.",
+flagKsa: "SAUDI ARABIA (KSA) ROUTE",
+flagKsaDesc: "Direct integration with the Musaned platform, ensuring transparent electronic e-contract processing.",
+flagUae: "UNITED ARAB EMIRATES (UAE)",
+flagUaeDesc: "Aligned with domestic worker centers (Tadbeer Centers) matching MoHRE vetting standards.",
+flagKuw: "KUWAIT, QATAR & OMAN",
+flagKuwDesc: "Fast processing and strict compliance with individual country bilateral labor agreements.",
+pipelineTitle: "A. B2B PARTNER PORTAL & PROCESS",
+matrixTitle: "CORE CAPABILITIES GRID",
+ethicalTitle: "WORKER WELFARE & ETHICAL RECRUITMENT",
+benefitsTitle: "STATUTORY EMPLOYER OBLIGATIONS",
+btnDemand: '<i class="fa-solid fa-file-shield"></i>Request Manpower / Partner With Us',
+btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>Register to Work / ይመዝገቡ',
+pSteps: ["Step 1", "Step 2", "Step 3", "Step 4"],
+pTitles: ["Agency Partnership & Attestation", "Candidate Sourcing & Registration", "Medical Clearance & TVET Training", "Visa Stamping & Flight Booking"],
+pDescs: [
+"Verify the Gulf agency/sponsor via Ethiopian Consulates. Upload Demand Letters onto the E-LMIS system.",
+"Source candidates legally to register in the national system. Minimum deployment age: 25 years old.",
+"Candidates undergo GAMCA medical exams and mandatory 21-day pre-departure training to obtain a CoC.",
+"Process visas via Tasheer / Enjaz / MoFA. Book travel exclusively through Ethiopian Airlines as mandated."
+],
+ethTitles: ["Our Zero-Fee Policy", "Embassy Registration", "24/7 Crisis Hotline"],
+ethDescs: [
+"In complete compliance with Ethiopian Law, we never charge recruitment, flight, or medical fees to domestic workers. All costs are covered legally by the employer.",
+"Every worker deployed by our agency is fully registered with the official Ethiopian Embassy in her respective destination country to safeguard ongoing metrics.",
+"We maintain an active, secure WhatsApp helpline loop for our deployed workers to report deployment issues, health concerns, or contract breaches immediately."
+],
+th: ["Feature", "What We Provide", "Why It Matters"],
+rows: [
+["Language & Cultural Training", "Basic Arabic, household vocabulary, and Middle Eastern cultural norms.", "Minimizes early-stage communication gaps."],
+["Modern Appliances Training", "Hands-on experience with washing machines, smart vacuums, microwaves, and ironers.", "Prevents accidental equipment damage."],
+["CoC Certification", "Compliance with the latest 2026 MoLS guidelines for technical qualification.", "Guarantees legal clearance for exit."],
+["Post-Placement Support", "Dedicated case officers who mediate between worker and employer over WhatsApp/Phone.", "Reduces absconding and protects worker welfare."]
+],
+benefits: [
+{icon: "fa-utensils", title: "Food & Accommodation", desc: "Three nutritious meals daily and clean, safe living quarters provided at no cost."},
+{icon: "fa-heart-pulse", title: "Full Medical Insurance", desc: "Paid entirely by the employer for the full duration of the 2-year contract."},
+{icon: "fa-plane-departure", title: "Free Air Travel", desc: "Free one-way ticket to destination and round-trip upon contract completion."},
+{icon: "fa-money-check-dollar", title: "Traceable Payments", desc: "Electronic salary processing via Musaned (KSA) or PAM (Kuwait)."},
+{icon: "fa-bed", title: "Rest Periods", desc: "Minimum of 1 full day of rest per week, plus standard daily rest periods."}
+]
+},
+am: {
+dir: "ltr",
+navTitle: "አልከሀ በውጭ ሀገር ስራና ሰራተኛ አገናኝ",
+navSubtitle: "በአዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተረጋገጠ",
+navLic: "የንግድ ፈቃድ: MT/AA/14/671/4142324/2015",
+navMgr: "ስራ አስኪያጅ: መኽዲያ ነጋሽ ሸሪፍ",
+heroTitle: "ብቃትን ከ <strong>ዘመናዊ የቴክኖሎጂ አሰራር</strong> ጋር እናገናኛለን",
+heroDesc: "ህጋዊ ምልመላ፣ በቲቪኢቲ (TVET) የሰለጠኑ ሰራተኞች እና በኢ-ኤልኤምአይኤስ (E-LMIS) የተደገፈ ቀልጣፋ አሰራር።",
+flagKsa: "የሳውዲ አረቢያ መስመር",
+flagKsaDesc: "ከሙሳነድ (Musaned) መድረክ ጋር ቀጥተኛ ትስስር፣ ግልጽ የሆነ የኤሌክትሮኒክስ ውል ሂደትን ያረጋግጣል",
+flagUae: "የተባበሩት አረብ ኤምሬትስ (UAE)",
+flagUaeDesc: "ከቤት ሰራተኛ ማዕከላት (Tadbeer Centers) ጋር የተጣጣመ እና የMoHRE መስፈርቶችን የሚያሟላ",
+flagKuw: "ኩዌት፣ ኳታር እና ኦማን",
+flagKuwDesc: "ፈጣን ሂደት እና ከየሀገራቱ የሁለትዮሽ የስራ ስምምነቶች ጋር ሙሉ ተገዢነት",
+pipelineTitle: "ሀ. የባለድርሻ አካላት መድረክ እና የስራ ሂደት",
+matrixTitle: "የአቅም እና የስልጠና መለኪያ ሰንጠረዥ",
+ethicalTitle: "የሰራተኞች ደህንነት እና ህጋዊ ምልመላ",
+benefitsTitle: "የአሰሪው ህጋዊ ግዴታዎች",
+btnDemand: '<i class="fa-solid fa-file-shield"></i>የኮንትራት ፍላጎት ማመልከቻ አስገባ',
+btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>ለመመዝገብ እዚህ ይጫኑ (በነጻ)',
+pSteps: ["ደረጃ 1", "ደረጃ 2", "ደረጃ 3", "ደረጃ 4"],
+pTitles: ["የኤጀንሲ አጋርነት እና ማረጋገጫ", "እጩዎችን መመልመል እና መመዝገብ", "የህክምና ምርመራ እና የቲቪኢቲ ስልጠና", "ቪዛ ማህተም እና የበረራ ቦታ ማስያዝ"],
+pDescs: [
+"የባህረ ሰላጤው ሀገር ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል። የሥራ ትዕዛዙ በE-LMIS ላይ ይጫናል",
+"ሰራተኞችን በህጋዊ መንገድ መመልመል፤ በብሔራዊ የሥራ ገበያ መረጃ ሥርዓት የተመዘገቡ እና ዕድሜያቸው 25 የሞላ መሆን አለበት",
+"እጩዎች የ GAMCA የህክምና ምርመራ ያደርጋሉ። የ CoC የምስክር ወረቀት ለማግኘት የ21 ቀን ስልጠና ያጠናቅቃሉ",
+"ቪዛዎችን በታሺር / ኤንጃዝ / MoFA በኩል ማስተናገድ። በኢትዮጵያ አየር መንገድ ብቻ ጉዞ ይያዛል"
+],
+ethTitles: ["የነፃ ምልመላ ፖሊሲያችን", "የኤምባሲ ምዝገባ", "የ24/7 የድንገተኛ ስልክ መስመር"],
+ethDescs: [
+"ከኢትዮጵያ ህግ ጋር ሙሉ በሙሉ በተጣጣመ መልኩ ከቤት ሰራተኞች ምንም አይነት የቅጥር፣ የበረራ ወይም የህክምና ክፍያ አንጠይቅም። ወጪዎች በሙሉ በአሰሪው ይሸፈናሉ",
+"በእኛ ኤጀንሲ በኩል የሚሰማሩ ሰራተኞች በሙሉ መብታቸው እንዲጠበቅ በመዳረሻ ሀገሩ በሚገኘው የኢትዮጵያ ኤምባሲ ይመዘገባሉ",
+"ሰራተኞች ችግር፣ የጤና ስጋት ወይም የውል ጥሰት ሲያጋጥማቸው በአስቸኳይ ሪፖርት የሚያደርጉበት የዋትስአፕ የእርዳታ መስመር አለን"
+],
+th: ["ልዩ ባህሪ", "እኛ የምናቀርበው", "ጠቀሜታው"],
+rows: [
+["የቋንቋ እና የባህል ስልጠና", "መሰረታዊ የአረብኛ ቋንቋ፣ የቤት ውስጥ የቃላት አጠቃቀም እና የመካከለኛው ምስራቅ ባህላዊ ደንቦች", "የመጀመሪያ ደረጃ የመገናኛ ክፍተቶችን ይቀንሳል"],
+["የዘመናዊ እቃዎች አጠቃቀም ስልጠና", "በልብስ ማጠቢያ ማሽኖች፣ በዘመናዊ ቫኪዩሞች፣ በማይክሮዌቭ እና በብረት ማሽኖች ላይ ተግባራዊ ልምምድ", "በድንገተኛ አጠቃቀም ምክንያት የሚመጣን የእቃዎች ብልሽት ይከላከላል"],
+["የ CoC ማረጋገጫ", "የቅርብ ጊዜውን የ2026 የMoLS መመሪያዎችን የቴክኒክ ብቃት መስፈርቶች ማሟላት", "ህጋዊ የስምሪት ፍቃድ ማግኘትን ያረጋግጣል"],
+["ከስምሪት በኋላ የሚደረግ ድጋፍ", "በሰራተኛው እና በአሰሪው መካከል በዋትስአፕ/በስልክ የሚያስታርቁ ራሳቸውን የቻሉ የጉዳይ መኮንኖች", "ሰራተኛው ስራ ጥሎ የመጥፋት እድልን ይቀንሳል እንዲሁም ደህንነታቸውን ይጠብቃል"]
+],
+benefits: [
+{icon: "fa-utensils", title: "ምግብ እና ማረፊያ", desc: "በየቀኑ ሶስት ጊዜ የተመጣጠነ ምግብ እና ደህንነቱ የተጠበቀ ማረፊያ በነጻ።"},
+{icon: "fa-heart-pulse", title: "የጤና መድን", desc: "ለ2 ዓመት የውል ዘመን ሙሉ በሙሉ በአሰሪው የሚሸፈን።"},
+{icon: "fa-plane-departure", title: "የነጻ በረራ", desc: "ወደ መዳረሻ ሀገር ሲሄዱ እና ውል ሲጠናቀቅ ለተመላሽ ጉዞ የነጻ ትኬት።"},
+{icon: "fa-money-check-dollar", title: "የክፍያ ስርዓት", desc: "በሙሳነድ (KSA) ወይም PAM (ኩዌት) በኩል በኤሌክትሮኒክስ የሚፈጸም ክፍያ።"},
+{icon: "fa-bed", title: "የእረፍት ጊዜያት", desc: "በሳምንት ቢያንስ 1 ሙሉ ቀን እረፍት እና በየቀኑ የተመደበ የእረፍት ሰዓት።"}
+]
+},
+ar: {
+dir: "rtl",
+navTitle: "وكالة الخه للاستقدام الخارجي",
+navSubtitle: "متوافق مع المراسيم الإثيوبية رقم 923/2016 و 1246/2021",
+navLic: "رقم الترخيص: MT/AA/14/671/4142324/2015",
+navMgr: "المدير العام: مهدية نقاش شريف",
+heroTitle: "ربط الكفاءات بـ <strong>البنية التحتية المستقبلية</strong>",
+heroDesc: "مصادر أخلاقية، وقنوات نشر معتمدة عبر مراكز التعليم الفني والمهني والربط الإلكتروني المباشر مع منظومة E-LMIS الوطنية.",
+flagKsa: "مسار المملكة العربية السعودية (KSA)",
+flagKsaDesc: "ربط مباشر مع منصة مساند لتوفير عقود إلكترونية سريعة وشفافة ومطابقة لمعايير وزارة الموارد البشرية السعودية.",
+flagUae: "مسار الإمارات العربية المتحدة (UAE)",
+flagUaeDesc: "تنسيق متكامل مع مراكز تدبير لضمان اختيار وتدقيق العمالة المنزلية حسب معايير وزارة الموارد البشرية والتوطين.",
+flagKuw: "مسارات الكويت وقطر وعمان",
+flagKuwDesc: "معالجة سريعة لجميع المعاملات والالتزام الكامل بالاتفاقيات العمالية الثنائية الموقعة مع الحكومة الإثيوبية.",
+pipelineTitle: "أ. بوابة الشركاء والمسار الإجرائي التعاقدي (B2B)",
+matrixTitle: "شبكة القدرات والكفاءات الأساسية المعيارية",
+ethicalTitle: "رعاية العمالة المنزلية والتوظيف الأخلاقي المسؤول",
+benefitsTitle: "المزايا القانونية الإلزامية لصاحب العمل",
+btnDemand: '<i class="fa-solid fa-file-shield"></i>طلب أيدي عاملة / شراكة أعمال استقدام',
+btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>تسجيل طلبات العمالة / ይመዝገቡ عبر البريد',
+pSteps: ["الخطوة 1", "الخطوة 2", "الخطوة 3", "الخطوة 4"],
+pTitles: ["شراكة الوكالات وتصديق العقود", "استقطاب الكفاءات والتسجيل الوطني", "الفحص الطبي والدورة التأهيلية CoC", "تصدير التأشيرة والرحلات المجدولة"],
+pDescs: [
+"التحقق من الوكالة الخليجية المستقدمة عبر القنصلية الإثيوبية، ومن ثم رفع وتوليد طلب الاستقدام عبر منصة E-LMIS.",
+"استقطاب طلبات العمالة بصورة قانونية متمثلة في نظام معلومات سوق العمل مع مطابقة شرط السن (25 سنة كحد أدنى).",
+"تجاوز الفحوصات الطبية المعتمدة جامكا (GAMCA)، وإكمال دورة تدريبية مدتها 21 يوماً في المعاهد الفنية المعتمدة للحصول على شهادة الكفاءة CoC.",
+"إنهاء إجراءات وبصمات التأشيرة عبر منصات تأشير أو إنجاز أو وزارة الخارجية بحسب الدولة، والرحلات عبر الخطوط الإثيوبية حصرياً."
+],
+ethTitles: ["سياسة التوظيف المجاني بالكامل", "التسجيل الإلزامي بالسفارات", "خط الساخن للطوارئ 24/7"],
+ethDescs: [
+"امتثالاً كاملاً للقوانين الإثيوبية، لا نتقاضى أي رسوم استقدام أو تذاكر طيران أو تكاليف فحص طبي من العامل؛ فصاحب العمل يتكفل بها قانونياً بالكامل.",
+"كل عاملة منزلية يتم إيفادها عبر الوكالة يتم تسجيل بياناتها الرسمية لدى السفارة الإثيوبية في بلد المضيف لضمان متابعة مستمرة وأمنة.",
+"نحن نوفر خط مساعدة وتواصل مباشر ومستمر عبر الواتساب لتلقي البلاغات والشكاوى المتعلقة بالرواتب أو الرعاية الصحية الفورية."
+],
+th: ["الميزة التدريبية", "ما نوفره للكفاءات", "أهمية العائد التشغيلي"],
+rows: [
+["التدريب اللغوي والثقافي", "أساسيات اللغة العربية، مفردات التدبير المنزلي، والتعريف بالعادات والتقاليد الخليجية.", "تقليص فجوات التواصل في المراحل الأولى للاستقدام."],
+["التدريب على الأجهزة الحديثة", "تطبيق عملي مباشر على الغسالات الآلية، المكانس الذكية، المايكرويف وأجهزة الكي المتطورة.", "حماية الأجهزة المنزلية من التلف الناتج عن سوء الاستخدام العرضي."],
+["شهادة الكفاءة المعتمدة CoC", "مطابقة تامة لأحدث لوائح وزارة العمل والمهارات الإثيوبية (MoLS 2026) للتأهيل الفني.", "تضمن الحصول على تصريح الخروج والسفر القانوني دون معوقات."],
+["دعم ما بعد التوظيف والوصول", "مسؤولو علاقات مخصصون للتوسط وحل النزاعات بين العامل وصاحب العمل عبر الهاتف والواتساب.", "الحد من حالات الهروب وحماية حقوق وسلامة العمالة المستقدمة."]
+],
+benefits: [
+{icon: "fa-utensils", title: "الغذاء والسكن", desc: "توفير ثلاث وجبات يومياً ومسكن آمن ونظيف مجاناً."},
+{icon: "fa-heart-pulse", title: "تأمين طبي شامل", desc: "مغطى بالكامل من قبل صاحب العمل طوال فترة العقد (سنتان)."},
+{icon: "fa-plane-departure", title: "تذاكر طيران مجانية", desc: "تذكرة ذهاب للمضيف، وتذكرة عودة عند إتمام العقد."},
+{icon: "fa-money-check-dollar", title: "مدفوعات موثقة", desc: "معالجة إلكترونية للرواتب عبر منصة مساند (السعودية) أو PAM (الكويت)."},
+{icon: "fa-bed", title: "فترات الراحة", desc: "يوم كامل كحد أدنى من الراحة أسبوعياً، بالإضافة إلى فترات الراحة اليومية."}
+]
+}
 };
 
 function switchTelemetry(lang, btn) {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const data = telemetryData[lang];
-    
-    document.getElementById('nav-title').innerText = data.navTitle;
-    document.getElementById('sec-benefits').innerText = data.benefitsTitle;
-    
-    const container = document.getElementById('benefits-grid');
-    container.innerHTML = '';
-    data.benefits.forEach(item => {
-        container.innerHTML += `
-            <div class="benefit-card">
-                <i class="fa-solid ${item.icon}"></i>
-                <h4>${item.title}</h4>
-                <p style="font-size: 0.9rem; color: var(--silver-muted);">${item.desc}</p>
-            </div>
-        `;
-    });
+document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+
+const data = telemetryData[lang];
+document.getElementById('portal-root').setAttribute('dir', data.dir);
+
+document.getElementById('nav-title').innerText = data.navTitle;
+document.getElementById('nav-subtitle').innerText = data.navSubtitle;
+document.getElementById('nav-lic').innerText = data.navLic;
+document.getElementById('nav-mgr').innerText = data.navMgr;
+
+document.getElementById('hero-title').innerHTML = data.heroTitle;
+document.getElementById('hero-desc').innerText = data.heroDesc;
+
+document.getElementById('flag-ksa').innerText = data.flagKsa;
+document.getElementById('flag-ksa-desc').innerText = data.flagKsaDesc;
+document.getElementById('flag-uae').innerText = data.flagUae;
+document.getElementById('flag-uae-desc').innerText = data.flagUaeDesc;
+document.getElementById('flag-kuw').innerText = data.flagKuw;
+document.getElementById('flag-kuw-desc').innerText = data.flagKuwDesc;
+
+document.getElementById('sec-pipeline').innerText = data.pipelineTitle;
+document.getElementById('sec-matrix').innerText = data.matrixTitle;
+document.getElementById('sec-ethical').innerText = data.ethicalTitle;
+document.getElementById('sec-benefits').innerText = data.benefitsTitle;
+
+for (let i = 1; i <= 4; i++) {
+document.getElementById(`p${i}-step`).innerText = data.pSteps[i-1];
+document.getElementById(`p${i}-title`).innerText = data.pTitles[i-1];
+document.getElementById(`p${i}-desc`).innerText = data.pDescs[i-1];
 }
-    <!-- 🧠 PORTAL INTERACTION LOGIC ENGINE -->
-    <script>
-        const telemetryData = {
-            en: {
-                dir: "ltr",
-                navTitle: "ALEKHA FOREIGN EMPLOYMENT AGENT",
-                navSubtitle: "Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]",
-                navLic: "Lic No: MT/AA/14/671/4142324/2015[cite: 1]",
-                navMgr: "Manager: Mehdiya Negash Sherif[cite: 1]",
-                heroTitle: "Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]",
-                heroDesc: "Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets[cite: 1].",
-                flagKsa: "SAUDI ARABIA (KSA) ROUTE[cite: 1]",
-                flagKsaDesc: "Direct integration with the Musaned platform, ensuring transparent electronic e-contract processing[cite: 1].",
-                flagUae: "UNITED ARAB EMIRATES (UAE)[cite: 1]",
-                flagUaeDesc: "Aligned with domestic worker centers (Tadbeer Centers) matching MoHRE vetting standards[cite: 1].",
-                flagKuw: "KUWAIT, QATAR & OMAN[cite: 1]",
-                flagKuwDesc: "Fast processing and strict compliance with individual country bilateral labor agreements[cite: 1].",
-                pipelineTitle: "A. B2B PARTNER PORTAL & PROCESS",
-                matrixTitle: "CORE CAPABILITIES GRID",
-                ethicalTitle: "WORKER WELFARE & ETHICAL RECRUITMENT",
-                btnDemand: '<i class="fa-solid fa-file-shield"></i>Request Manpower / Partner With Us[cite: 1]',
-                btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>Register to Work / ይመዝገቡ[cite: 1]',
-                pSteps: ["Step 1[cite: 1]", "Step 2[cite: 1]", "Step 3[cite: 1]", "Step 4[cite: 1]"],
-                pTitles: ["Agency Partnership & Attestation[cite: 1]", "Candidate Sourcing & Registration[cite: 1]", "Medical Clearance & TVET Training[cite: 1]", "Visa Stamping & Flight Booking[cite: 1]"],
-                pDescs: [
-                    "Verify the Gulf agency/sponsor via Ethiopian Consulates. Upload Demand Letters onto the E-LMIS system[cite: 1].",
-                    "Source candidates legally to register in the national system. Minimum deployment age: 25 years old[cite: 1].",
-                    "Candidates undergo GAMCA medical exams and mandatory 21-day pre-departure training to obtain a CoC[cite: 1].",
-                    "Process visas via Tasheer / Enjaz / MoFA. Book travel exclusively through Ethiopian Airlines as mandated[cite: 1]."
-                ],
-                ethTitles: ["Our Zero-Fee Policy[cite: 1]", "Embassy Registration[cite: 1]", "24/7 Crisis Hotline[cite: 1]"],
-                ethDescs: [
-                    "In complete compliance with Ethiopian Law, we never charge recruitment, flight, or medical fees to domestic workers. All costs are covered legally by the employer[cite: 1].",
-                    "Every worker deployed by our agency is fully registered with the official Ethiopian Embassy in her respective destination country to safeguard ongoing metrics[cite: 1].",
-                    "We maintain an active, secure WhatsApp helpline loop for our deployed workers to report deployment issues, health concerns, or contract breaches immediately[cite: 1]."
-                ],
-                th: ["Feature[cite: 1]", "What We Provide[cite: 1]", "Why It Matters[cite: 1]"],
-                rows: [
-                    ["Language & Cultural Training[cite: 1]", "Basic Arabic, household vocabulary, and Middle Eastern cultural norms[cite: 1].", "Minimizes early-stage communication gaps[cite: 1]."],
-                    ["Modern Appliances Training[cite: 1]", "Hands-on experience with washing machines, smart vacuums, microwaves, and ironers[cite: 1].", "Prevents accidental equipment damage[cite: 1]."],
-                    ["CoC Certification[cite: 1]", "Compliance with the latest 2026 MoLS guidelines for technical qualification[cite: 1].", "Guarantees legal clearance for exit[cite: 1]."],
-                    ["Post-Placement Support[cite: 1]", "Dedicated case officers who mediate between worker and employer over WhatsApp/Phone[cite: 1].", "Reduces absconding and protects worker welfare[cite: 1]."]
-                ]
-            },
-            am: {
-                dir: "ltr",
-                navTitle: "አልከሀ በውጭ ሀገር ስራና ሰራተኛ አገናኝ[cite: 1]",
-                navSubtitle: "በአዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተረጋገጠ[cite: 1]",
-                navLic: "የንግድ ፈቃድ: MT/AA/14/671/4142324/2015[cite: 1]",
-                navMgr: "ስራ አስኪያጅ: መኽዲያ ነጋሽ ሸሪፍ[cite: 1]",
-                heroTitle: "ብቃትን ከ <strong>ዘመናዊ የቴክኖሎጂ አሰራር</strong> ጋር እናገናኛለን[cite: 1]",
-                heroDesc: "ህጋዊ ምልመላ፣ በቲቪኢቲ (TVET) የሰለጠኑ ሰራተኞች እና በኢ-ኤልኤ|ምአይኤስ (E-LMIS) የተደገፈ ቀልጣፋ አሰራር[cite: 1]።",
-                flagKsa: "የሳውዲ አረቢያ መስመር[cite: 1]",
-                flagKsaDesc: "ከሙሳነድ (Musaned) መድረክ ጋር ቀጥተኛ ትስስር፣ ግልጽ የሆነ የኤሌክትሮኒክስ ውል ሂደትን ያረጋግጣል[cite: 1]።",
-                flagUae: "የተባበሩት አረብ ኤምሬትስ (UAE)[cite: 1]",
-                flagUaeDesc: "ከቤት ሰራተኛ ማዕከላት (Tাদbeer Centers) ጋር የተጣጣመ እና የMoHRE መስፈርቶችን የሚያሟላ[cite: 1]።",
-                flagKuw: "ኩዌት፣ ኳታር እና ኦማን[cite: 1]",
-                flagKuwDesc: "ፈጣን ሂደት እና ከየሀገራቱ የሁለትዮሽ የስራ ስምምነቶች ጋር ሙሉ ተገዢነት[cite: 1]።",
-                pipelineTitle: "ሀ. የባለድርሻ አካላት መድረክ እና የስራ ሂደት",
-                matrixTitle: "የአቅም እና የስልጠና መለኪያ ሰንጠረዥ",
-                ethicalTitle: "የሰራተኞች ደህንነት እና ህጋዊ ምልመላ",
-                btnDemand: '<i class="fa-solid fa-file-shield"></i>የኮንትራት ፍላጎት ማመልከቻ አስገባ[cite: 1]',
-                btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>ለመመዝገብ እዚህ ይጫኑ (በነጻ)[cite: 1]',
-                pSteps: ["ደረጃ 1[cite: 1]", "ደረጃ 2[cite: 1]", "ደረጃ 3[cite: 1]", "ደረጃ 4[cite: 1]"],
-                pTitles: ["የኤጀንሲ አጋርነት እና ማረጋገጫ[cite: 1]", "እጩዎችን መመልመል እና መመዝገብ[cite: 1]", "የህክምና ምርመራ እና የቲቪኢቲ ስልጠና[cite: 1]", "ቪዛ ማህተም እና የበረራ ቦታ ማስያዝ[cite: 1]"],
-                pDescs: [
-                    "የባህረ ሰላጤው ሀገር ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል። የሥራ ትዕዛዙ በE-LMIS ላይ ይጫናል[cite: 1]።",
-                    "ሰራተኞችን በህጋዊ መንገድ መመልመል፤ በብሔራዊ የሥራ ገበያ መረጃ ሥርዓት የተመዘገቡ እና ዕድሜያቸው 25 የሞላ መሆን አለበት[cite: 1]።",
-                    "እጩዎች የ GAMCA የህክምና ምርመራ ያደርጋሉ። የ CoC የምስክር ወረቀት ለማግኘት የ21 ቀን ስልጠና ያጠናቅቃሉ[cite: 1]።",
-                    "ቪዛዎችን በታሺር / ኤንጃዝ / MoFA በኩል ማስተናገድ። በኢትዮጵያ አየር መንገድ ብቻ ጉዞ ይያዛል[cite: 1]።"
-                ],
-                ethTitles: ["የነፃ ምልመላ ፖሊሲያችን[cite: 1]", "የኤምባሲ ምዝገባ[cite: 1]", "የ24/7 የድንገተኛ ስልክ መስመር[cite: 1]"],
-                ethDescs: [
-                    "ከኢትዮጵያ ህግ ጋር ሙሉ በሙሉ በተጣጣመ መልኩ ከቤት ሰራተኞች ምንም አይነት የቅጥር፣ የበረራ ወይም የህክምና ክፍያ አንጠይቅም። ወጪዎች በሙሉ በአሰሪው ይሸፈናሉ[cite: 1]።",
-                    "በእኛ ኤጀንሲ በኩል የሚሰማሩ ሰራተኞች በሙሉ መብታቸው እንዲጠበቅ በመዳረሻ ሀገሩ በሚገኘው የኢትዮጵያ ኤምባሲ ይመዘገባሉ[cite: 1]።",
-                    "ሰራተኞች ችግር፣ የጤና ስጋት ወይም የውል ጥሰት ሲያጋጥማቸው በአስቸኳይ ሪፖርት የሚያደርጉበት የዋትስአፕ የእርዳታ መስመር አለን[cite: 1]።"
-                ],
-                th: ["ልዩ ባህሪ[cite: 1]", "እኛ የምናቀርበው[cite: 1]", "ጠቀሜታው[cite: 1]"],
-                rows: [
-                    ["የቋንቋ እና የባህል ስልጠና[cite: 1]", "መሰረታዊ የአረብኛ ቋንቋ፣ የቤት ውስጥ የቃላት አጠቃቀም እና የመካከለኛው ምስራቅ ባህላዊ ደንቦች[cite: 1]።", "የመጀመሪያ ደረጃ የመገናኛ ክፍተቶችን ይቀንሳል[cite: 1]።"],
-                    ["የዘመናዊ እቃዎች አጠቃቀም ስልጠና[cite: 1]", "በልብስ ማጠቢያ ማሽኖች፣ በዘመናዊ ቫኪዩሞች፣ በማይክሮዌቭ እና በብረት ማሽኖች ላይ ተግባራዊ ልምምድ[cite: 1]።", "በድንገተኛ አጠቃቀም ምክንያት የሚመጣን የእቃዎች ብልሽት ይከላከላል[cite: 1]።"],
-                    ["የ CoC ማረጋገጫ[cite: 1]", "የቅርብ ጊዜውን የ2026 የMoLS መመሪያዎችን የቴክኒክ ብቃት መስፈርቶች ማሟላት[cite: 1]።", "ህጋዊ የስምሪት ፍቃድ ማግኘትን ያረጋግጣል[cite: 1]።"],
-                    ["ከስምሪት በኋላ የሚደረግ ድጋፍ[cite: 1]", "በሰራተኛው እና በአሰሪው መካከል በዋትስአፕ/በስልክ የሚያስታርቁ ራሳቸውን የቻሉ የጉዳይ መኮንኖች[cite: 1]።", "ሰራተኛው ስራ ጥሎ የመጥፋት እድልን ይቀንሳል እንዲሁም ደህንነታቸውን ይጠብቃል[cite: 1]Box።"]
-                ]
-            },
-            ar: {
-                dir: "rtl",
-                navTitle: "وكالة الخه للاستقدام الخارجي",
-                navSubtitle: "متوافق مع المراسيم الإثيوبية رقم 923/2016 و 1246/2021[cite: 1]",
-                navLic: "رقم الترخيص: MT/AA/14/671/4142324/2015[cite: 1]",
-                navMgr: "المدير العام: مهدية نقاش شريف[cite: 1]",
-                heroTitle: "ربط الكفاءات بـ <strong>البنية التحتية المستقبلية</strong>[cite: 1]",
-                heroDesc: "مصادر أخلاقية، وقنوات نشر معتمدة عبر مراكز التعليم الفني والمهني والربط الإلكتروني المباشر مع منظومة E-LMIS الوطنية[cite: 1].",
-                flagKsa: "مسار المملكة العربية السعودية (KSA)[cite: 1]",
-                flagKsaDesc: "ربط مباشر مع منصة مساند لتوفير عقود إلكترونية سريعة وشفافة ومطابقة لمعايير وزارة الموارد البشرية السعودية[cite: 1].",
-                flagUae: "مسار الإمارات العربية المتحدة (UAE)[cite: 1]",
-                flagUaeDesc: "تنسيق متكامل مع مراكز تدبير لضمان اختيار وتدقيق العمالة المنزلية حسب معايير وزارة الموارد البشرية والتوطين[cite: 1].",
-                flagKuw: "مسارات الكويت وقطر وعمان[cite: 1]",
-                flagKuwDesc: "معالجة سريعة لجميع المعاملات والالتزام الكامل بالاتفاقيات العمالية الثنائية الموقعة مع الحكومة الإثيوبية[cite: 1].",
-                pipelineTitle: "أ. بوابة الشركاء والمسار الإجرائي التعاقدي (B2B)",
-                matrixTitle: "شبكة القدرات والكفاءات الأساسية المعيارية",
-                ethicalTitle: "رعاية العمالة المنزلية والتوظيف الأخلاقي المسؤول",
-                btnDemand: '<i class="fa-solid fa-file-shield"></i>طلب أيدي عاملة / شراكة أعمال استقدام[cite: 1]',
-                btnWhatsapp: '<i class="fa-solid fa-user-plus"></i>تسجيل طلبات العمالة / ይመዝገቡ عبر البريد[cite: 1]',
-                pSteps: ["الخطوة 1[cite: 1]", "الخطوة 2[cite: 1]", "الخطوة 3[cite: 1]", "الخطوة 4[cite: 1]"],
-                pTitles: ["شراكة الوكالات وتصديق العقود[cite: 1]", "استقطاب الكفاءات والتسجيل الوطني[cite: 1]", "الفحص الطبي والدورة التأهيلية CoC[cite: 1]", "تصدير التأشيرة والرحلات المجدولة[cite: 1]"],
-                pDescs: [
-                    "التحقق من الوكالة الخليجية المستقدمة عبر القنصلية الإثيوبية، ومن ثم رفع وتوليد طلب الاستقدام عبر منصة E-LMIS[cite: 1].",
-                    "استقطاب طلبات العمالة بصورة قانونية متمثلة في نظام معلومات سوق العمل مع مطابقة شرط السن (25 سنة كحد أدنى)[cite: 1].",
-                    "تجاوز الفحوصات الطبية المعتمدة جامكا (GAMCA)، وإكمال دورة تدريبية مدتها 21 يوماً في المعاهد الفنية المعتمدة للحصول على شهادة الكفاءة CoC[cite: 1].",
-                    "إنهاء إجراءات وبصمات التأشيرة عبر منصات تأشير أو إنجاز أو وزارة الخارجية بحسب الدولة، والرحلات عبر الخطوط الإثيوبية حصرياً[cite: 1]."
-                ],
-                ethTitles: ["سياسة التوظيف المجاني بالكامل[cite: 1]", "التسجيل الإلزامي بالسفارات[cite: 1]", "خط الساخن للطوارئ 24/7[cite: 1]"],
-                ethDescs: [
-                    "امتثالاً كاملاً للقوانين الإثيوبية، لا نتقاضى أي رسوم استقدام أو تذاكر طيران أو تكاليف فحص طبي من العامل؛ فصاحب العمل يتكفل بها قانونياً بالكامل[cite: 1].",
-                    "كل عاملة منزلية يتم إيفادها عبر الوكالة يتم تسجيل بياناتها الرسمية لدى السفارة الإثيوبية في بلد المضيف لضمان متابعة مستمرة وأمنة[cite: 1].",
-                    "نحن نوفر خط مساعدة وتواصل مباشر ومستمر عبر الواتساب لتلقي البلاغات والشكاوى المتعلقة بالرواتب أو الرعاية الصحية الفورية[cite: 1]."
-                ],
-                th: ["الميزة التدريبية[cite: 1]", "ما نوفره للكفاءات[cite: 1]", "أهمية العائد التشغيلي[cite: 1]"],
-                rows: [
-                    ["التدريب اللغوي والثقافي[cite: 1]", "أساسيات اللغة العربية، مفردات التدبير المنزلي، والتعريف بالعادات والتقاليد الخليجية[cite: 1].", "تقليص فجوات التواصل في المراحل الأولى للاستقدام[cite: 1]."],
-                    ["التدريب على الأجهزة الحديثة[cite: 1]", "تطبيق عملي مباشر على الغسالات الآلية، المكانس الذكية، المايكرويف وأجهزة الكي المتطورة[cite: 1].", "حماية الأجهزة المنزلية من التلف الناتج عن سوء الاستخدام العرضي[cite: 1]."],
-                    ["شهادة الكفاءة المعتمدة CoC[cite: 1]", "مطابقة تامة لأحدث لوائح وزارة العمل والمهارات الإثيوبية (MoLS 2026) للتأهيل الفني[cite: 1].", "تضمن الحصول على تصريح الخروج والسفر القانوني دون معوقات[cite: 1]."],
-                    ["دعم ما بعد التوظيف والوصول[cite: 1]", "مسؤولو علاقات مخصصون للتوسط وحل النزاعات بين العامل وصاحب العمل عبر الهاتف والواتساب[cite: 1].", "الحد من حالات الهروب وحماية حقوق وسلامة العمالة المستقدمة[cite: 1]."]
-                ]
-            }
-        };
 
-        function switchTelemetry(lang, btn) {
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+document.getElementById('eth1-title').innerText = data.ethTitles[0];
+document.getElementById('eth1-desc').innerText = data.ethDescs[0];
+document.getElementById('eth2-title').innerText = data.ethTitles[1];
+document.getElementById('eth2-desc').innerText = data.ethDescs[1];
+document.getElementById('eth3-title').innerText = data.ethTitles[2];
+document.getElementById('eth3-desc').innerText = data.ethDescs[2];
 
-            const data = telemetryData[lang];
-            document.getElementById('portal-root').setAttribute('dir', data.dir);
+const headerCells = document.getElementById('table-head').children;
+for (let j = 0; j < headerCells.length; j++) {
+headerCells[j].innerText = data.th[j];
+}
 
-            document.getElementById('nav-title').innerText = data.navTitle;
-            document.getElementById('nav-subtitle').innerText = data.navSubtitle;
-            document.getElementById('nav-lic').innerText = data.navLic;
-            document.getElementById('nav-mgr').innerText = data.navMgr;
+const tableRows = document.getElementById('table-rows').children;
+for (let k = 0; k < tableRows.length; k++) {
+const cells = tableRows[k].children;
+cells[0].innerText = data.rows[k][0];
+cells[1].innerText = data.rows[k][1];
+cells[2].innerText = data.rows[k][2];
+}
 
-            document.getElementById('hero-title').innerHTML = data.heroTitle;
-            document.getElementById('hero-desc').innerText = data.heroDesc;
+const container = document.getElementById('benefits-grid');
+container.className = 'ethical-grid';
+container.innerHTML = '';
+data.benefits.forEach(item => {
+container.innerHTML += `
+<div class="ethical-card">
+<i class="fa-solid ${item.icon}"></i>
+<h4>${item.title}</h4>
+<p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">${item.desc}</p>
+</div>
+`;
+});
 
-            document.getElementById('flag-ksa').innerText = data.flagKsa;
-            document.getElementById('flag-ksa-desc').innerText = data.flagKsaDesc;
-            document.getElementById('flag-uae').innerText = data.flagUae;
-            document.getElementById('flag-uae-desc').innerText = data.flagUaeDesc;
-            document.getElementById('flag-kuw').innerText = data.flagKuw;
-            document.getElementById('flag-kuw-desc').innerText = data.flagKuwDesc;
-
-            document.getElementById('sec-pipeline').innerText = data.pipelineTitle;
-            document.getElementById('sec-matrix').innerText = data.matrixTitle;
-            document.getElementById('sec-ethical').innerText = data.ethicalTitle;
-
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`p${i}-step`).innerText = data.pSteps[i-1];
-                document.getElementById(`p${i}-title`).innerText = data.pTitles[i-1];
-                document.getElementById(`p${i}-desc`).innerText = data.pDescs[i-1];
-            }
-
-            document.getElementById('eth1-title').innerText = data.ethTitles[0];
-            document.getElementById('eth1-desc').innerText = data.ethDescs[0];
-            document.getElementById('eth2-title').innerText = data.ethTitles[1];
-            document.getElementById('eth2-desc').innerText = data.ethDescs[1];
-            document.getElementById('eth3-title').innerText = data.ethTitles[2];
-            document.getElementById('eth3-desc').innerText = data.ethDescs[2];
-
-            const headerCells = document.getElementById('table-head').children;
-            for (let j = 0; j < headerCells.length; j++) {
-                headerCells[j].innerText = data.th[j];
-            }
-
-            const tableRows = document.getElementById('table-rows').children;
-            for (let k = 0; k < tableRows.length; k++) {
-                const cells = tableRows[k].children;
-                cells[0].innerText = data.rows[k][0];
-                cells[1].innerText = data.rows[k][1];
-                cells[2].innerText = data.rows[k][2];
-            }
-
-            document.getElementById('btn-demand').innerHTML = data.btnDemand;
-            document.getElementById('btn-whatsapp').innerHTML = data.btnWhatsapp;
-        }
-    </script>
+document.getElementById('btn-demand').innerHTML = data.btnDemand;
+document.getElementById('btn-whatsapp').innerHTML = data.btnWhatsapp;
+}
+// Init
+switchTelemetry('en', document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
