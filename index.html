@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEKHA FOREIGN EMPLOYMENT AGENT | Futuristic Portal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        /* --- FUTURISTIC MATRIX DESIGN SYSTEM --- */
+        :root {
+            --bg-obsidian: #0b0f19;
+            --bg-card: #131a2c;
+            --neon-cyan: #00f2fe;
+            --neon-purple: #8a2be2;
+            --silver-quartz: #e2e8f0;
+            --silver-muted: #94a3b8;
+            --matrix-glow: 0px 0px 15px rgba(0, 242, 254, 0.4);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-obsidian);
+            color: var(--silver-quartz);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- TELEMETRY GLOW HEADER --- */
+        header {
+            background: linear-gradient(180deg, #111827 0%, rgba(11, 15, 25, 0.9) 100%);
+            border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--neon-cyan);
+            animation: core-spin 4s linear infinite;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ffffff, var(--silver-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HERO & FLAGS DISPLAY --- */
+        .hero {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero h2 strong {
+            color: var(--neon-cyan);
+            text-shadow: var(--matrix-glow);
+        }
+
+        .flag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        /* --- POP-IN / OUT INTERACTIVE CARDS --- */
+        .flag-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        .flag-card:hover {
+            transform: scale(1.05);
+            opacity: 1;
+            border-color: var(--neon-cyan);
+            box-shadow: var(--matrix-glow);
+        }
+
+        .flag-icon-large {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        .flag-card:hover .flag-icon-large {
+            transform: translateY(-5px) rotate(5deg);
+        }
+
+        /* --- STRUCTURAL PIPELINE LAYOUT --- */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--neon-cyan);
+            margin: 0.5rem auto 0;
+            box-shadow: var(--matrix-glow);
+        }
+
+        .pipeline-container {
+            max-width: 1200px;
+            margin: 0 auto padding 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .pipeline-card {
+            background: rgba(19, 26, 44, 0.6);
+            border-left: 4px solid var(--neon-purple);
+            padding: 2rem;
+            border-radius: 0 12px 12px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .pipeline-card:hover {
+            border-left-color: var(--neon-cyan);
+            background: var(--bg-card);
+            transform: translateX(5px);
+        }
+
+        .pipeline-num {
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- MATRIX DATA TABLES --- */
+        .table-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--neon-cyan);
+            text-align: left;
+            padding: 1.2rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+        }
+
+        td {
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--silver-quartz);
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* --- HIGH-INTENSITY CTA BUTTONS --- */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-neon:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-obsidian);
+            box-shadow: var(--matrix-glow);
+            transform: scale(1.03);
+        }
+
+        /* --- ANIMATIONS ENGINE --- */
+        @keyframes core-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- MOBILE LAYOUT FIXES --- */
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; text-align: center; gap: 1rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .cta-container { flex-direction: column; gap: 1rem; }
+            .btn-neon { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 📡 TELEMETRY COMMAND HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo-block">
+                <i class="fa-solid fa-microchip logo-icon"></i>
+                <div class="logo-text">
+                    <h1>ALEKHA FOREIGN EMPLOYMENT AGENT</h1>
+                    <p>Proclamation No. 923/2016 & 1246/2021 Compliant[cite: 1]</p>
+                </div>
+            </div>
+            <div class="logo-text" style="text-align: right;">
+                <p style="color: var(--silver-muted);">Lic No: MT/AA/14/671/4142324/2015[cite: 1]</p>
+                <p style="color: var(--neon-purple);">Manager: Mehdiya Negash Sherif[cite: 1]</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🌌 GATEWAY HERO SECTION -->
+    <section class="hero">
+        <h2>Bridging Talent With <strong>Futuristic Infrastructure</strong>[cite: 1]</h2>
+        <p style="color: var(--silver-muted); max-width: 700px; margin: 0 auto;">
+            Ethical sourcing, certified TVET deployment pipelines, and electronic E-LMIS mapping protocols for Gulf markets[cite: 1].
+        </p>
+
+        <!-- 🌍 INTERACTIVE TARGET RUNWAYS -->
+        <div class="flag-grid">
+            <div class="flag-card">
+                <span class="flag-icon-large">🇸🇦</span>
+                <h3>SAUDI ARABIA[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">Musaned Integrated[cite: 1]</p>
+            </div>
+            <div class="flag-card">
+                <span class="flag-icon-large">🇰🇼</span>
+                <h3>KUWAIT[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">PAM Checked[cite: 1]</p>
+            </div>
+            <div class="flag-card">
+                <span class="flag-icon-large">🇯🇴</span>
+                <h3>JORDAN[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">Bilateral Cleared[cite: 1]</p>
+            </div>
+            <div class="flag-card">
+                <span class="flag-icon-large">🇦🇪</span>
+                <h3>UAE[cite: 1]</h3>
+                <p style="font-size: 0.8rem; color: var(--neon-cyan); margin-top: 0.5rem;">MoHRE Standards[cite: 1]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛠️ SECURE COMPLIANCE PIPELINE -->
+    <h3 class="section-title">THE TRANSIT MECHANISM</h3>
+    <div class="pipeline-container">
+        <div class="pipeline-card">
+            <div class="pipeline-num">Step 01[cite: 1]</div>
+            <h4>Demand Verification[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+                Gulf agency attestation via Embassy validation, mapping workflows directly to the E-LMIS array[cite: 1].
+            </p>
+        </div>
+        <div class="pipeline-card">
+            <div class="pipeline-num">Step 02[cite: 1]</div>
+            <h4>Talent Harvesting[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+                Legal candidate matching tracking a strict minimum baseline of 25 Years Old for deployment[cite: 1].
+            </p>
+        </div>
+        <div class="pipeline-card">
+            <div class="pipeline-num">Step 03[cite: 1]</div>
+            <h4>Biometric Bootcamp[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+                GAMCA fitness testing coupled with a mandatory 21-day TVET training protocol for CoC verification[cite: 1].
+            </p>
+        </div>
+        <div class="pipeline-card">
+            <div class="pipeline-num">Step 04[cite: 1]</div>
+            <h4>Logistics Manifest[cite: 1]</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-muted); margin-top: 0.5rem;">
+                Visa compilation via regional digital pathways (Tasheer/Enjaz) and exclusive Ethiopian Airlines booking[cite: 1].
+            </p>
+        </div>
+    </div>
+
+    <!-- 📊 LOGISTICS & VALUE GRID -->
+    <h3 class="section-title">WAGE MATRIX & TARGET SCHEDULING</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Destination Region</th>
+                    <th>Job Category Matrix</th>
+                    <th>Experience Tier</th>
+                    <th>Base Salary Scale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🇸🇦 Saudi Arabia[cite: 1]</td>
+                    <td>Housemaid / Domestic Support[cite: 1]</td>
+                    <td>First-Time / Fresh Entry[cite: 1]</td>
+                    <td style="color: var(--neon-cyan); font-weight: bold;">1000 SAR[cite: 1]</td>
+                </tr>
+                <tr>
+                    <td>🇸🇦 Saudi Arabia[cite: 1]</td>
+                    <td>Housemaid / Domestic Support[cite: 1]</td>
+                    <td>Veteran Tier (2+ Years Gulf Exp)[cite: 1]</td>
+                    <td style="color: var(--neon-cyan); font-weight: bold;">1200 SAR[cite: 1]</td>
+                </tr>
+                <tr>
+                    <td>🇦🇪 United Arab Emirates[cite: 1]</td>
+                    <td>Housemaid / Domestic Support[cite: 1]</td>
+                    <td>First-Time / Fresh Entry[cite: 1]</td>
+                    <td style="color: var(--neon-cyan); font-weight: bold;">1000 AED[cite: 1]</td>
+                </tr>
+                <tr>
+                    <td>🇯🇴 Jordan[cite: 1]</td>
+                    <td>Domestic Worker (Universal)[cite: 1]</td>
+                    <td>Minimum Legal Baseline[cite: 1]</td>
+                    <td style="color: var(--neon-cyan); font-weight: bold;">271 USD (Net)[cite: 1]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ⚡ ACTION HUB CTAs -->
+    <div class="cta-container">
+        <button class="btn-neon" onclick="window.location.href='mailto:Alekhaagency@gmail.com'">
+            <i class="fa-solid fa-file-invoice" style="margin-right: 10px;"></i>Submit Demand Letter[cite: 1]
+        </button>
+        <button class="btn-neon" style="border-color: var(--neon-purple); color: var(--neon-purple);" onclick="window.location.href='https://wa.me/251922959544'">
+            <i class="fa-brands fa-whatsapp" style="margin-right: 10px;"></i>Initialize Candidate Link[cite: 1]
+        </button>
+    </div>
+
+</body>
+</html>
